@@ -35,7 +35,7 @@ export default function Project(props: RouteComponentProps<IProjectRouteProps>):
         }
     }, [data]);
 
-    const RoutedProject = () => (
+    const RoutedProject = (): JSX.Element => (
         <Suspense fallback={<Spinner />}>
             <Switch>
                 <Route path={props.match.url} render={() => <ProjectContent {...project} />} />
@@ -79,20 +79,22 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
     );
 };
 
-const mapProjectBlog = (blogs: IDataProjectsBlog[]) => blogs.map((blog: IDataProjectsBlog) => {
-    const mapParagraphs = (paragraphs: string[]) => paragraphs.map((paragraph: string) => {
+const mapProjectBlog = (blogs: IDataProjectsBlog[]): JSX.Element[] => {
+    return blogs.map((blog: IDataProjectsBlog): JSX.Element => {
+        const mapParagraphs = (paragraphs: string[]) => paragraphs.map((paragraph: string) => {
+            return (
+                <p key={paragraphs.indexOf(paragraph)}>{paragraph}</p>
+            );
+        });
+
         return (
-            <p key={paragraphs.indexOf(paragraph)}>{paragraph}</p>
+            <div key={blogs.indexOf(blog)} className="mb-4">
+                <h4>{blog.title}</h4>
+
+                {
+                    blog.paragraphs && mapParagraphs(blog.paragraphs)
+                }
+            </div>
         );
     });
-
-    return (
-        <div key={blogs.indexOf(blog)} className="mb-4">
-            <h4>{blog.title}</h4>
-
-            {
-                blog.paragraphs && mapParagraphs(blog.paragraphs)
-            }
-        </div>
-    );
-});
+};

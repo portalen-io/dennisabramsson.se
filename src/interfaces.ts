@@ -3,7 +3,7 @@ export interface IData {
 }
 
 export interface IDataProject {
-    id: Guid;
+    id: GUID;
     path: string;
     name: string;
     description?: string;

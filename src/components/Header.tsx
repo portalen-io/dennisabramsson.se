@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
     return (
         <header className="Header">
             <div className="container py-2">
