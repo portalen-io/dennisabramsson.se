@@ -24,7 +24,18 @@ declare global {
     window.ENV_PRODUCTION = process.env.REACT_APP_DIST_ENV === EnvironmentVariables.Production;
     window.ENV_DEVELOPMENT = process.env.REACT_APP_DIST_ENV === EnvironmentVariables.Development;
     window.NEW_GUID = () => uuidv4();
+})();
 
+ReactDOM.render(
+    <React.StrictMode>
+        <HashRouter>
+            <Route component={App} />
+        </HashRouter>
+    </React.StrictMode>,
+    document.getElementById('App')
+);
+
+(function () {
     function developmentLogs() {
         console.log(
             "%cprocess.env.REACT_APP_FEATURED_PROJECTS_QUANTITY:",
@@ -38,20 +49,12 @@ declare global {
             "color:red;font-family:system-ui;font-size:4rem;-webkit-text-stroke: 3px black;font-weight:bold");
     }
 
-    if (window.ENV_PRODUCTION) productionLogs();
-    else if (window.ENV_DEVELOPMENT) developmentLogs();
+    if (window.ENV_PRODUCTION) {
+        serviceWorker.register();
+        productionLogs();
+    }
+    else if (window.ENV_DEVELOPMENT) {
+        serviceWorker.unregister();
+        developmentLogs();
+    }
 })();
-
-ReactDOM.render(
-    <React.StrictMode>
-        <HashRouter>
-            <Route component={App} />
-        </HashRouter>
-    </React.StrictMode>,
-    document.getElementById('App')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
