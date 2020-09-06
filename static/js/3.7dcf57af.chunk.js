@@ -1,2 +1,0 @@
-(this["webpackJsonpdennisabramsson.se"]=this["webpackJsonpdennisabramsson.se"]||[]).push([[3],{30:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return r}));var a=t(0),s=t.n(a);function l(){return s.a.createElement("div",{className:"Post"},s.a.createElement("h4",null,"Post"),s.a.createElement("p",null,"Description of post."))}function r(){return s.a.createElement("div",{id:"Blog"},s.a.createElement("h1",null,"Blog"),s.a.createElement(l,null))}}}]);
-//# sourceMappingURL=3.7dcf57af.chunk.js.map

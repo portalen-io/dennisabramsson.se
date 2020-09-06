@@ -1,2 +1,0 @@
-(this["webpackJsonpdennisabramsson.se"]=this["webpackJsonpdennisabramsson.se"]||[]).push([[4],{28:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return r}));var s=t(0),a=t.n(s);function r(){return a.a.createElement("div",{id:"Home"},a.a.createElement("h1",null,"Home"),a.a.createElement("p",null,"Hello World!"))}}}]);
-//# sourceMappingURL=4.f7da0ab4.chunk.js.map
