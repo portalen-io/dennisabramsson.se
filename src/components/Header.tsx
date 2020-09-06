@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Header = () => {
     return (
-        <header className="Header bg-light">
+        <header className="Header">
             <div className="container py-2">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <a className="navbar-brand" href="/">Dennis Abramsson</a>

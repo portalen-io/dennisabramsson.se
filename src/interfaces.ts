@@ -7,6 +7,7 @@ export interface IDataProject {
     path: string;
     name: string;
     description?: string;
+    thumbnailSrc?: string;
     iframeSrc?: string;
     blogs?: IDataProjectsBlog[];
 }
