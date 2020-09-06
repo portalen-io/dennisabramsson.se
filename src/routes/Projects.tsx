@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import {
     IData,
@@ -49,7 +50,9 @@ const mapProjects = (projects: IDataProject[]): JSX.Element[] => {
                         iframeSrc && <IFrame />
                     }
 
-                    <a href={path} className="btn btn-primary mt-3">Full details</a>
+                    <NavLink to={path} className="btn btn-primary mt-3">
+                        Full details
+                    </NavLink>
                 </div>
             </div>
         );

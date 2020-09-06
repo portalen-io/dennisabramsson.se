@@ -25,7 +25,7 @@ export default function Project(props: RouteComponentProps<IProjectRouteProps>):
     useEffect(() => {
         if (data.projects) {
             data.projects.forEach((project: IDataProject) => {
-                if (project.path === window.location.pathname) {
+                if (window.location.hash.includes(project.path)) {
                     setProject(project);
                     setRender(true);
                 } else if (data.projects && data.projects.indexOf(project) === data.projects.length) {

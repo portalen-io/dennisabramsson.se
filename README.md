@@ -1,6 +1,8 @@
 # DennisAbramsson.se
 Web portfolio
 
+https://stackoverflow.com/questions/16901981/add-hash-before-location-pathname
+
 ### Portalen.io
 * Init 1h
 * First outcast 3h

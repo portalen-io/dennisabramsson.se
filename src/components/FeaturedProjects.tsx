@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import {
     IData,
@@ -35,7 +36,9 @@ const mapFeaturedProjects = (projects: IDataProject[], featuredProjectsQuantity:
                             description && <p className="card-text">{description}</p>
                         }
 
-                        <a href={path} className="btn btn-primary">Full details</a>
+                        <NavLink to={path} className="btn btn-primary">
+                            Full details
+                        </NavLink>
                     </div>
                 </div>
             );
