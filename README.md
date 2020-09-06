@@ -15,3 +15,5 @@ Web portfolio
     * Models
     * Exactly how the layout works / what is customable and the dynamics
     * First design input
+    
+* Add .env flows & change to browserrouter 1h
