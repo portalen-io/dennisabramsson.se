@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dennisabramsson.se/static/css/main.c7fa5990.chunk.css",
-    "main.js": "/dennisabramsson.se/static/js/main.c19ce663.chunk.js",
-    "main.js.map": "/dennisabramsson.se/static/js/main.c19ce663.chunk.js.map",
+    "main.js": "/dennisabramsson.se/static/js/main.8fb4643c.chunk.js",
+    "main.js.map": "/dennisabramsson.se/static/js/main.8fb4643c.chunk.js.map",
     "runtime-main.js": "/dennisabramsson.se/static/js/runtime-main.e6d5e837.js",
     "runtime-main.js.map": "/dennisabramsson.se/static/js/runtime-main.e6d5e837.js.map",
     "static/js/2.c46b7f32.chunk.js": "/dennisabramsson.se/static/js/2.c46b7f32.chunk.js",
@@ -16,7 +16,7 @@
     "static/js/6.2a309dc1.chunk.js": "/dennisabramsson.se/static/js/6.2a309dc1.chunk.js",
     "static/js/6.2a309dc1.chunk.js.map": "/dennisabramsson.se/static/js/6.2a309dc1.chunk.js.map",
     "index.html": "/dennisabramsson.se/index.html",
-    "precache-manifest.4f530f9ec002b1d5dcc58392f3910ca1.js": "/dennisabramsson.se/precache-manifest.4f530f9ec002b1d5dcc58392f3910ca1.js",
+    "precache-manifest.9fb5f3317783eccd74ff88b1bac9f449.js": "/dennisabramsson.se/precache-manifest.9fb5f3317783eccd74ff88b1bac9f449.js",
     "service-worker.js": "/dennisabramsson.se/service-worker.js",
     "static/css/main.c7fa5990.chunk.css.map": "/dennisabramsson.se/static/css/main.c7fa5990.chunk.css.map",
     "static/js/2.c46b7f32.chunk.js.LICENSE.txt": "/dennisabramsson.se/static/js/2.c46b7f32.chunk.js.LICENSE.txt"
@@ -25,6 +25,6 @@
     "static/js/runtime-main.e6d5e837.js",
     "static/js/2.c46b7f32.chunk.js",
     "static/css/main.c7fa5990.chunk.css",
-    "static/js/main.c19ce663.chunk.js"
+    "static/js/main.8fb4643c.chunk.js"
   ]
 }

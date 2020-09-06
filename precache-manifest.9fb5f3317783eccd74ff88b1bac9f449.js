@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "10f4506c652164e5ed12bd54a3d5ff1d",
+    "revision": "8b6faf83c6ab273a064aea021f81b2da",
     "url": "/dennisabramsson.se/index.html"
   },
   {
-    "revision": "4739c732de8117a20e05",
+    "revision": "f60da72989f864dd2694",
     "url": "/dennisabramsson.se/static/css/main.c7fa5990.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dennisabramsson.se/static/js/6.2a309dc1.chunk.js"
   },
   {
-    "revision": "4739c732de8117a20e05",
-    "url": "/dennisabramsson.se/static/js/main.c19ce663.chunk.js"
+    "revision": "f60da72989f864dd2694",
+    "url": "/dennisabramsson.se/static/js/main.8fb4643c.chunk.js"
   },
   {
     "revision": "ed0fb9f3510947103aa5",
