@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "git-push": "git push",
     "git-merge-development": "git merge development",
-    "git-pull": "git merge development",
+    "git-pull": "git pull",
     "deploy": "run-s git-pull git-merge-development git-push build deploy-gh-pages",
     "deploy-gh-pages": "gh-pages -d build",
     "css": "run-s css-build css-compile css-prefix",
