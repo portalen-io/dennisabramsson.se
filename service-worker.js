@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dennisabramsson.se/precache-manifest.18474996878ae598251f4226418b142e.js"
+  "/dennisabramsson.se/precache-manifest.9125e084f6b3abf60124a0b0324e582e.js"
 );
 
 self.addEventListener('message', (event) => {
