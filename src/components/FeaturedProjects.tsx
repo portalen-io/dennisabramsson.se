@@ -17,7 +17,9 @@ export const FeaturedProjects = (): JSX.Element => {
 
     return (
         <section className="FeaturedProjects">
-            {data.projects && mapFeaturedProjects(data.projects, featuredProjectsQuantity)}
+            <div className="row justify-content-center">
+                {data.projects && mapFeaturedProjects(data.projects, featuredProjectsQuantity)}
+            </div>
         </section>
     );
 };
@@ -28,17 +30,19 @@ const mapFeaturedProjects = (projects: IDataProject[], featuredProjectsQuantity:
 
         while (projects.indexOf(project) < featuredProjectsQuantity) {
             return (
-                <div key={id} className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">{name}</h5>
+                <div key={id} className="col-xl-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">{name}</h5>
 
-                        {
-                            description && <p className="card-text">{description}</p>
-                        }
+                            {
+                                description && <p className="card-text">{description}</p>
+                            }
 
-                        <NavLink to={path} className="btn btn-primary">
-                            Full details
-                        </NavLink>
+                            <NavLink to={path} className="btn btn-primary">
+                                Full details
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             );
