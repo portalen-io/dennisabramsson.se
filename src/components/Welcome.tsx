@@ -29,8 +29,11 @@ export const Welcome = (): JSX.Element => {
                 </div>
 
                 <div className="col-xl-7 py-5 px-4" >
-                    <h1>{data.welcomeTitle}</h1>
-                    {mapBlogs(data.blogs)}
+                    <h1 className="display-2 mb-4">{data.welcomeTitle}</h1>
+
+                    {
+                        mapBlogs && mapBlogs(data.blogs)
+                    }
                 </div>
             </div>
         </section>
