@@ -38,7 +38,7 @@ const mapProjects = (projects: IDataProject[]): JSX.Element[] => {
         );
 
         return (
-            <div key={id} className="card mb-3">
+            <div key={id} className="card mb-4 p-4">
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
 

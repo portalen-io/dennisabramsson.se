@@ -24,8 +24,9 @@ export const Welcome = (): JSX.Element => {
     return (
         <section className="Welcom mb-4">
             <div className="row">
-                <div className="col-xl-5 p-4" style={{ backgroundColor: 'salmon', minHeight: '450px' }}>
-
+                <div className="col-xl-5">
+                    <div className="p-4" style={{ backgroundColor: 'salmon', minHeight: '450px' }}>
+                    </div>
                 </div>
 
                 <div className="col-xl-7 py-5 px-4" >

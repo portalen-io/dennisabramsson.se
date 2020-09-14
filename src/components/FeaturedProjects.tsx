@@ -17,8 +17,16 @@ export const FeaturedProjects = (): JSX.Element => {
 
     return (
         <section className="FeaturedProjects">
-            <div className="row justify-content-center">
-                {data.projects && mapFeaturedProjects(data.projects, featuredProjectsQuantity)}
+            <h1 className="text-center mb-4">Featured projects</h1>
+
+            <div className="d-flex flex-column">
+                <div className="row justify-content-center">
+                    {data.projects && mapFeaturedProjects(data.projects, featuredProjectsQuantity)}
+                </div>
+
+                <NavLink to="/projects" className="btn btn-primary my-4 mx-auto">
+                    Browse all projects
+                </NavLink>
             </div>
         </section>
     );
@@ -31,7 +39,7 @@ const mapFeaturedProjects = (projects: IDataProject[], featuredProjectsQuantity:
         while (projects.indexOf(project) < featuredProjectsQuantity) {
             return (
                 <div key={id} className="col-xl-4">
-                    <div className="card">
+                    <div className="card" style={{ height: '231px' }}>
                         <div className="card-body">
                             <h5 className="card-title">{name}</h5>
 
