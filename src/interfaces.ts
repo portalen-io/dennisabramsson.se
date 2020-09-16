@@ -7,9 +7,14 @@ export interface IDataProject {
     path: string;
     name: string;
     description?: string;
-    thumbnailSrc?: string;
+    thumbnailFile?: IDataProjectThumbnailFile;
     iframeSrc?: string;
     blogs?: IDataProjectsBlog[];
+}
+
+export interface IDataProjectThumbnailFile {
+    name: string;
+    type: string;
 }
 
 export interface IDataProjectsBlog {

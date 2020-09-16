@@ -7088,6 +7088,84 @@ body {
 .box-shadow-5 {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid red; }
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid red; }
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid red;
+  border-bottom: 50px solid transparent; }
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 100px solid red;
+  border-bottom: 50px solid transparent; }
+
+.triangle-topleft {
+  width: 0;
+  height: 0;
+  border-top: 80px solid red;
+  border-right: 80px solid transparent; }
+
+.triangle-topright {
+  width: 0;
+  height: 0;
+  border-top: 80px solid red;
+  border-left: 80px solid transparent; }
+
+.triangle-bottomleft {
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid red;
+  border-right: 80px solid transparent; }
+
+.triangle-bottomright {
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid red;
+  border-left: 80px solid transparent; }
+
+.FeaturedProjects .card {
+  border: 0; }
+
+.FeaturedProjects .btn-lg, .FeaturedProjects .btn-group-lg > .btn {
+  background-color: transparent; }
+
+.FeaturedProjects .card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all ease-in-out .25s; }
+  .FeaturedProjects .card:hover {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    transform: scale(1.2);
+    z-index: 500; }
+
+.FeaturedProjects .btn-lg, .FeaturedProjects .btn-group-lg > .btn {
+  color: black;
+  border-color: black;
+  text-transform: uppercase;
+  border-width: medium;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: box-shadow ease-in .1s; }
+  .FeaturedProjects .btn-lg:hover, .FeaturedProjects .btn-group-lg > .btn:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
 .Welcome {
   min-height: 500px; }
 

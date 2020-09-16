@@ -1,0 +1,39 @@
+// BOOTSTRAP RESET
+.FeaturedProjects {
+    .card {
+        border: 0;
+    }
+
+    .btn-lg {
+        background-color: transparent;
+    }
+}
+
+// DESIGN
+.FeaturedProjects {
+    .card {
+        box-shadow: $box-shadow2;
+        transition: all ease-in-out .25s;
+
+        &:hover {
+            box-shadow: $box-shadow5;
+            transform: scale(1.2);
+            z-index: 500;
+        }
+    }
+
+    .btn-lg {
+        color: black;
+        border-color: black;
+        text-transform: uppercase;
+        border-width: medium;
+        box-shadow: $box-shadow3;
+        transition: box-shadow ease-in .1s;
+
+        &:hover {
+            background-color: black;
+            color: white;
+            box-shadow: $box-shadow5;
+        }
+    }
+}

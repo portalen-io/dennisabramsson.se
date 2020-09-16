@@ -62,19 +62,21 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
 
     return (
         <div className="ProjectContent">
-            <h2>{name}</h2>
+            <div className="container p-3">
+                <h2>{name}</h2>
 
-            {
-                description && <p>{description}</p>
-            }
+                {
+                    description && <p>{description}</p>
+                }
 
-            {
-                iframeSrc && <IFrame />
-            }
+                {
+                    iframeSrc && <IFrame />
+                }
 
-            {
-                blogs && mapProjectBlog(blogs)
-            }
+                {
+                    blogs && mapProjectBlog(blogs)
+                }
+            </div>
         </div>
     );
 };

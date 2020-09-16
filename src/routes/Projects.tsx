@@ -19,8 +19,10 @@ export default function Projects(): JSX.Element {
 
     return (
         <div id="Projects">
-            <h1>Projects</h1>
-            {mapProjects(projects)}
+            <div className="container p-3">
+                <h1>Projects</h1>
+                {mapProjects(projects)}
+            </div>
         </div>
     );
 };

@@ -19,6 +19,10 @@ export const DataContext: React.Context<IData> = React.createContext({
             path: '/project/spel-1',
             name: 'Spel 1',
             description: 'Det handlar om 1',
+            thumbnailFile: {
+                name: 'gwent',
+                type: 'jpg'
+            },
             iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
             blogs: [
                 {
@@ -36,6 +40,10 @@ export const DataContext: React.Context<IData> = React.createContext({
             path: '/project/spel-2',
             name: 'Spel 2',
             description: 'Det handlar om 2',
+            thumbnailFile: {
+                name: 'flying-robots',
+                type: 'jpg'
+            },
             iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
             blogs: [
                 {
@@ -57,6 +65,10 @@ export const DataContext: React.Context<IData> = React.createContext({
             path: '/project/spel-3',
             name: 'Spel 3',
             description: 'Det handlar om 3',
+            thumbnailFile: {
+                name: 'arrow',
+                type: 'jpg'
+            },
             iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
             blogs: [
                 {
@@ -88,7 +100,7 @@ const App = (): JSX.Element => {
         <Fragment>
             <Header />
 
-            <main className="flex-grow-1 container p-3">
+            <main className="flex-grow-1">
                 <Suspense fallback={<Spinner />}>
                     <Switch>
                         <Route exact path="/" component={Home} />
