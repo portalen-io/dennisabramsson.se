@@ -11,14 +11,28 @@
 
 // DESIGN
 .FeaturedProjects {
+    background-color: white;
+
     .card {
         box-shadow: $box-shadow2;
         transition: all ease-in-out .25s;
 
         &:hover {
             box-shadow: $box-shadow5;
-            transform: scale(1.2);
             z-index: 500;
+            transform: scale(1.025);
+        }
+
+        @media(min-width: $lg) {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        @media(min-width: $xl) {
+            &:hover {
+                transform: scale(1.2);
+            }
         }
     }
 

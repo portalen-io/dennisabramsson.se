@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import {
@@ -7,6 +7,7 @@ import {
 } from '../interfaces';
 
 import { DataContext } from '../App';
+import { mapProjects } from '../components/FeaturedProjects';
 
 export default function Projects(): JSX.Element {
     const data: IData = useContext(DataContext);
@@ -20,43 +21,12 @@ export default function Projects(): JSX.Element {
     return (
         <div id="Projects">
             <div className="container p-3">
-                <h1>Projects</h1>
-                {mapProjects(projects)}
+                <h1 className="display-1 my-4 text-center">Projects</h1>
+
+                <div className="row">
+                    {data.projects && mapProjects(data.projects)}
+                </div>
             </div>
         </div>
     );
-};
-
-const mapProjects = (projects: IDataProject[]): JSX.Element[] => {
-    return projects.map((project: IDataProject): JSX.Element => {
-        const { id, name, path, iframeSrc, description } = project;
-
-        const IFrame = (): JSX.Element => (
-            <div className="IFrame">
-                <div className="embed-responsive embed-responsive-16by9">
-                    <iframe className="embed-responsive-item" src={iframeSrc} title="YouTube video" allowFullScreen></iframe>
-                </div>
-            </div>
-        );
-
-        return (
-            <div key={id} className="card mb-4 p-4">
-                <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-
-                    {
-                        description && <p className="card-text">{description}</p>
-                    }
-
-                    {
-                        iframeSrc && <IFrame />
-                    }
-
-                    <NavLink to={path} className="btn btn-primary mt-3">
-                        Full details
-                    </NavLink>
-                </div>
-            </div>
-        );
-    });
 };

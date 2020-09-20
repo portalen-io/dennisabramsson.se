@@ -17,6 +17,12 @@ declare global {
         NEW_GUID(): GUID;
         ENV_PRODUCTION: boolean;
         ENV_DEVELOPMENT: boolean;
+        BS_XS: number;
+        BS_SM: number;
+        BS_MD: number;
+        BS_LG: number;
+        BS_XL: number;
+        BS_XXL: number;
     }
 };
 
@@ -24,6 +30,12 @@ declare global {
     window.ENV_PRODUCTION = process.env.REACT_APP_DIST_ENV === EnvironmentVariables.Production;
     window.ENV_DEVELOPMENT = process.env.REACT_APP_DIST_ENV === EnvironmentVariables.Development;
     window.NEW_GUID = () => uuidv4();
+    window.BS_XS = 0;
+    window.BS_SM = 576;
+    window.BS_MD = 768;
+    window.BS_LG = 992;
+    window.BS_XL = 1200;
+    window.BS_XXL = 1400;
 })();
 
 ReactDOM.render(

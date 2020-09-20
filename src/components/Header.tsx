@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { scrollTo } from '../scrollTo'
+
 export const Header = (): JSX.Element => {
     return (
         <header className="Header">
@@ -22,9 +24,9 @@ export const Header = (): JSX.Element => {
                             <NavLink to="/projects" className="nav-link ml-3">
                                 Projects
                             </NavLink>
-                            <NavLink to="#" className="nav-link ml-3">
+                            <a id="contact-btn-link" className="nav-link ml-3" style={{ cursor: 'pointer' }} onClick={() => scrollTo('Footer')}>
                                 Contacts
-                            </NavLink>
+                            </a>
                         </div>
                     </div>
                 </nav>

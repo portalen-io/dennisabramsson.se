@@ -8,16 +8,25 @@ export interface IDataProject {
     name: string;
     description?: string;
     thumbnailFile?: IDataProjectThumbnailFile;
-    iframeSrc?: string;
+    iframe?: {
+        src: string;
+        fullWidth?: boolean;
+    };
+    projectBlogs?: IDataProjectsBlog[];
     blogs?: IDataProjectsBlog[];
 }
 
 export interface IDataProjectThumbnailFile {
     name: string;
     type: string;
+    alt: string;
+    fullWidth?: boolean;
 }
 
 export interface IDataProjectsBlog {
-    title: string;
+    title?: string;
+    thumbnailFile?: IDataProjectThumbnailFile;
     paragraphs?: string[];
 }
+
+

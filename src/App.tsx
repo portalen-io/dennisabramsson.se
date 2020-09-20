@@ -21,13 +21,33 @@ export const DataContext: React.Context<IData> = React.createContext({
             description: 'Det handlar om 1',
             thumbnailFile: {
                 name: 'gwent',
-                type: 'jpg'
+                type: 'jpg',
+                alt: 'qwent game'
             },
-            iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
+            iframe: {
+                fullWidth: false,
+                src: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
+            },
+            projectBlogs: [
+                {
+                    thumbnailFile: {
+                        name: 'flying-robots',
+                        alt: 'flying-robots game',
+                        type: 'jpg'
+                    }
+                },
+                {
+                    title: 'Ganska coolt 11235412313',
+                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11231231']
+                }
+            ],
             blogs: [
                 {
-                    title: 'Du 1',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 1']
+                    thumbnailFile: {
+                        name: 'flying-robots',
+                        alt: 'flying-robots game',
+                        type: 'jpg'
+                    }
                 },
                 {
                     title: 'Ganska coolt 11',
@@ -42,9 +62,12 @@ export const DataContext: React.Context<IData> = React.createContext({
             description: 'Det handlar om 2',
             thumbnailFile: {
                 name: 'flying-robots',
+                alt: 'flying-robots game',
                 type: 'jpg'
             },
-            iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
+            iframe: {
+                src: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
+            },
             blogs: [
                 {
                     title: 'Du 2',
@@ -67,7 +90,8 @@ export const DataContext: React.Context<IData> = React.createContext({
             description: 'Det handlar om 3',
             thumbnailFile: {
                 name: 'arrow',
-                type: 'jpg'
+                type: 'jpg',
+                alt: 'arrow game'
             },
             iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
             blogs: [
@@ -91,6 +115,17 @@ export const DataContext: React.Context<IData> = React.createContext({
             name: 'Spel 4',
             description: 'Det handlar om 4',
             iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
+        },
+        {
+            id: '94170ad9-63c8-4513-b48c-1b19efc2c74a',
+            path: '/project/spel-5',
+            name: 'Spel 5',
+            description: 'Det handlar om 5',
+            thumbnailFile: {
+                name: 'flying-robots',
+                alt: 'arrow game',
+                type: 'jpg'
+            }
         }
     ]
 } as IData);

@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+}
+
 body {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -7,4 +11,15 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
+    background-color: aliceblue;
+    //font-family: $montserrat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    //font-family: $montserrat;
 }
