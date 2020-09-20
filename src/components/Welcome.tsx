@@ -4,7 +4,7 @@ import { IDataProjectsBlog } from '../interfaces';
 
 export const Welcome = (): JSX.Element => {
     const data = {
-        welcomeTitle: 'Welcome!',
+        welcomeTitle: 'Welcome',
         blogs: [
             {
                 title: 'Uno',
