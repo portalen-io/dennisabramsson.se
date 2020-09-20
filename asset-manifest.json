@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.e7a5f74f.chunk.css",
-    "main.js": "/static/js/main.4107eab2.chunk.js",
-    "main.js.map": "/static/js/main.4107eab2.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4eea6ac9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4eea6ac9.js.map",
-    "static/js/2.c46b7f32.chunk.js": "/static/js/2.c46b7f32.chunk.js",
-    "static/js/2.c46b7f32.chunk.js.map": "/static/js/2.c46b7f32.chunk.js.map",
-    "static/js/3.9f2f0f65.chunk.js": "/static/js/3.9f2f0f65.chunk.js",
-    "static/js/3.9f2f0f65.chunk.js.map": "/static/js/3.9f2f0f65.chunk.js.map",
-    "static/js/4.4f8428e5.chunk.js": "/static/js/4.4f8428e5.chunk.js",
-    "static/js/4.4f8428e5.chunk.js.map": "/static/js/4.4f8428e5.chunk.js.map",
-    "static/js/5.b04f5af3.chunk.js": "/static/js/5.b04f5af3.chunk.js",
-    "static/js/5.b04f5af3.chunk.js.map": "/static/js/5.b04f5af3.chunk.js.map",
-    "static/js/6.d536c3ef.chunk.js": "/static/js/6.d536c3ef.chunk.js",
-    "static/js/6.d536c3ef.chunk.js.map": "/static/js/6.d536c3ef.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.403efa2fe4d3f650d4cb046c8180b1b0.js": "/precache-manifest.403efa2fe4d3f650d4cb046c8180b1b0.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.e7a5f74f.chunk.css.map": "/static/css/main.e7a5f74f.chunk.css.map",
-    "static/js/2.c46b7f32.chunk.js.LICENSE.txt": "/static/js/2.c46b7f32.chunk.js.LICENSE.txt"
+    "main.css": "/dennisabramsson.se/static/css/main.e7a5f74f.chunk.css",
+    "main.js": "/dennisabramsson.se/static/js/main.136d1177.chunk.js",
+    "main.js.map": "/dennisabramsson.se/static/js/main.136d1177.chunk.js.map",
+    "runtime-main.js": "/dennisabramsson.se/static/js/runtime-main.503328e4.js",
+    "runtime-main.js.map": "/dennisabramsson.se/static/js/runtime-main.503328e4.js.map",
+    "static/js/2.c46b7f32.chunk.js": "/dennisabramsson.se/static/js/2.c46b7f32.chunk.js",
+    "static/js/2.c46b7f32.chunk.js.map": "/dennisabramsson.se/static/js/2.c46b7f32.chunk.js.map",
+    "static/js/3.82df62ec.chunk.js": "/dennisabramsson.se/static/js/3.82df62ec.chunk.js",
+    "static/js/3.82df62ec.chunk.js.map": "/dennisabramsson.se/static/js/3.82df62ec.chunk.js.map",
+    "static/js/4.a37ebd41.chunk.js": "/dennisabramsson.se/static/js/4.a37ebd41.chunk.js",
+    "static/js/4.a37ebd41.chunk.js.map": "/dennisabramsson.se/static/js/4.a37ebd41.chunk.js.map",
+    "static/js/5.855dfceb.chunk.js": "/dennisabramsson.se/static/js/5.855dfceb.chunk.js",
+    "static/js/5.855dfceb.chunk.js.map": "/dennisabramsson.se/static/js/5.855dfceb.chunk.js.map",
+    "static/js/6.d536c3ef.chunk.js": "/dennisabramsson.se/static/js/6.d536c3ef.chunk.js",
+    "static/js/6.d536c3ef.chunk.js.map": "/dennisabramsson.se/static/js/6.d536c3ef.chunk.js.map",
+    "index.html": "/dennisabramsson.se/index.html",
+    "precache-manifest.c34c36323b7cc8c8b9abeb2e77cab8f5.js": "/dennisabramsson.se/precache-manifest.c34c36323b7cc8c8b9abeb2e77cab8f5.js",
+    "service-worker.js": "/dennisabramsson.se/service-worker.js",
+    "static/css/main.e7a5f74f.chunk.css.map": "/dennisabramsson.se/static/css/main.e7a5f74f.chunk.css.map",
+    "static/js/2.c46b7f32.chunk.js.LICENSE.txt": "/dennisabramsson.se/static/js/2.c46b7f32.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4eea6ac9.js",
+    "static/js/runtime-main.503328e4.js",
     "static/js/2.c46b7f32.chunk.js",
     "static/css/main.e7a5f74f.chunk.css",
-    "static/js/main.4107eab2.chunk.js"
+    "static/js/main.136d1177.chunk.js"
   ]
 }
