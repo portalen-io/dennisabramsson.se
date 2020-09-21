@@ -28,6 +28,7 @@ export const Header = (): JSX.Element => {
                                 Contacts
                             </a>
                         </div>
+                        <i className="fab fa-github"></i>
                     </div>
                 </nav>
             </div>
