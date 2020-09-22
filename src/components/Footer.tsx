@@ -13,7 +13,7 @@ const blogsxx = [
 
 export const Footer = (): JSX.Element => {
     return (
-        <footer id="Footer" className="Footer bg-light">
+        <footer id="Footer" className="Footer bg-white border-top">
             <div className="container p-3">
                 <div className="p-4">
                     <h1 id="front-title" className="display-1 mb-4 text-center">Contacts</h1>

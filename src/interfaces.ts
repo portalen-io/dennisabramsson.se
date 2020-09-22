@@ -12,7 +12,7 @@ export interface IDataProject {
         src: string;
         fullWidth?: boolean;
     };
-    projectBlogs?: IDataProjectsBlog[];
+    asides?: IDataProjectsBlog[];
     blogs?: IDataProjectsBlog[];
 }
 
