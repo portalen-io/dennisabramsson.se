@@ -49,9 +49,18 @@ export default function Project(props: RouteComponentProps<IProjectRouteProps>):
     else return <Fragment></Fragment>;
 };
 
+
+
 const ProjectContent = (project: IDataProject): JSX.Element => {
+    const [fullWidth, setFullWidth] = useState<boolean>(false);
+
     const weHaveDisplays: boolean = (project.iframe !== null || project.thumbnailFile !== null);
-    const displaysFullWidth: boolean = (project.iframe?.fullWidth !== null || project.thumbnailFile?.fullWidth !== null);
+    const displaysFullWidth: boolean = (project.iframe?.fullWidth === true || ((project.thumbnailFile && project.thumbnailFile.fullWidth) === true));
+    console.log(displaysFullWidth);
+
+    const a = project.thumbnailFile?.fullWidth !== (null || false);
+    const b = project.iframe?.fullWidth !== (null || false);
+
 
     const IFrame = (): JSX.Element => {
         return (
@@ -68,6 +77,34 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
         );
     };
 
+    useEffect(() => {
+        const data = {
+            thumbnailFile: {
+                name: 'gwent',
+                type: 'jpg',
+                alt: 'qwent game',
+                fullWidth: false
+            }
+        }
+
+        console.log((data.thumbnailFile.fullWidth === true))
+    })
+
+    useEffect(() => {
+  
+        console.log(fullWidth);
+
+    }, [fullWidth])
+    /*
+    let x;
+
+    if (project.iframe)
+        project.iframe?.fullWidth
+        x = true
+    else (!project.iframe && project.thumbnailFile)
+           project.thumbnailFile?.fullWidth
+            x = true;
+*/
     return (
         <div className="ProjectContent bg-light">
             <div className="container p-3">
@@ -77,7 +114,7 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
                     {
                         weHaveDisplays &&
                         <Fragment>
-                            <div className={`${displaysFullWidth ? 'col-12' : 'col-lg-8'}`}>
+                            <div className={`${fullWidth ? 'col-12' : 'col-lg-8'}`}>
                                 {
                                     project.iframe && <IFrame />
                                 }
@@ -89,7 +126,7 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
 
                             {
                                 project.asides &&
-                                <div className={`${displaysFullWidth ? 'col-lg-6' : 'col-4'}`}>
+                                <div className={`${fullWidth ? 'col-lg-6' : 'col-4'}`}>
                                     {mapBlogs(project.asides)}
                                 </div>
                             }
@@ -97,14 +134,14 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
                     }
 
                     {
-                        project.asides && !weHaveDisplays &&
+                        project.asides && !fullWidth &&
                         <div className="col-12">
                             {mapBlogs(project.asides)}
                         </div>
                     }
 
                     {
-                        <div className={`${displaysFullWidth ? 'col-lg-6' : 'col-12'}`}>
+                        <div className={`${fullWidth ? 'col-lg-6' : 'col-12'}`}>
                             {project.blogs && mapBlogs(project.blogs)}
                         </div>
                     }
@@ -125,23 +162,21 @@ const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => {
         });
 
         return (
-            <div key={blogs.indexOf(blog)}>
-                <article className="card box-shadow-2 mt-4">
-                    <div className={blog.title || blog.paragraphs ? 'card-body' : ''}>
-                        {
-                            blog.title && <h5>{blog.title}</h5>
-                        }
+            <article key={blogs.indexOf(blog)} className="card box-shadow-2 mt-4">
+                {
+                    blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
+                }
 
-                        {
-                            blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
-                        }
+                <div className={blog.title || blog.paragraphs ? 'card-body' : ''}>
+                    {
+                        blog.title && <h5 className="card-title">{blog.title}</h5>
+                    }
 
-                        {
-                            blog.paragraphs && mapParagraphs(blog.paragraphs)
-                        }
-                    </div>
-                </article>
-            </div>
+                    {
+                        blog.paragraphs && mapParagraphs(blog.paragraphs)
+                    }
+                </div>
+            </article>
         );
     });
 };

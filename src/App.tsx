@@ -22,13 +22,14 @@ export const DataContext: React.Context<IData> = React.createContext({
             thumbnailFile: {
                 name: 'gwent',
                 type: 'jpg',
-                alt: 'qwent game'
+                alt: 'qwent game',
+                fullWidth: false
             },
             iframe: {
                 fullWidth: false,
                 src: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
             },
-            projectBlogs: [
+            asides: [
                 {
                     thumbnailFile: {
                         name: 'flying-robots',
@@ -37,8 +38,12 @@ export const DataContext: React.Context<IData> = React.createContext({
                     }
                 },
                 {
-                    title: 'Ganska coolt 11235412313',
+                    title: 'projectBlogs35412313',
                     paragraphs: ['Vet att vi kan göra många blog inlägg! 11231231']
+                },
+                {
+                    title: 'projectBlogs5412asdasdasd313',
+                    paragraphs: ['VetprojectBlogsnlägg! 11231231']
                 }
             ],
             blogs: [
@@ -47,7 +52,9 @@ export const DataContext: React.Context<IData> = React.createContext({
                         name: 'flying-robots',
                         alt: 'flying-robots game',
                         type: 'jpg'
-                    }
+                    },
+                    title: 'Ganska coolt 11',
+                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11']
                 },
                 {
                     title: 'Ganska coolt 11',
