@@ -16,19 +16,24 @@ export const Header = (): JSX.Element => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <NavLink to="/" className="nav-link active ml-3" aria-current="page">
+                            <NavLink to="/" className="nav-link active text-center px-4 ml-lg-3 mt-lg-0" aria-current="page">
                                 Home
                             </NavLink>
-                            <NavLink to="/projects" className="nav-link ml-3">
+                            <NavLink to="/projects" className="nav-link text-center px-4 mt-2 ml-lg-3 mt-lg-0">
                                 Projects
                             </NavLink>
-                            <a id="contact-btn-link" className="nav-link ml-3" style={{ cursor: 'pointer' }} onClick={() => scrollTo('Footer')}>
+                            <a id="contact-btn-link" className="nav-link text-center px-4 mt-2 ml-lg-3 mt-lg-0" onClick={() => scrollTo('Footer')}>
                                 Contacts
                             </a>
                         </div>
-                        <i className="fab fa-github"></i>
+
+                        <div className="ml-auto">
+                            <a href="https://github.com/portalen-io">
+                                <i className="fab fa-github social-link"></i>
+                            </a>
+                        </div>
                     </div>
                 </nav>
             </div>

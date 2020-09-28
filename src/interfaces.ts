@@ -8,7 +8,7 @@ export interface IDataProject {
     name: string;
     description?: string;
     thumbnailFile?: IDataProjectThumbnailFile;
-    iframe?: {
+    iframe?: {  
         src: string;
         fullWidth?: boolean;
     };

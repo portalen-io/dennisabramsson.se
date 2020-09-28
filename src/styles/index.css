@@ -6605,6 +6605,24 @@ body {
     color: white;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
+#contact-btn-link {
+  cursor: pointer; }
+
+.Header .nav-link {
+  border: 2px solid black;
+  color: black;
+  border-color: black;
+  text-transform: uppercase;
+  padding: .25rem 1.25rem !important; }
+  .Header .nav-link:hover {
+    background-color: black;
+    color: white !important; }
+
+.Header .social-link {
+  min-height: 32px;
+  width: auto;
+  color: black; }
+
 .FeaturedProjects .card {
   border: 0; }
 
