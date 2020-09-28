@@ -14,22 +14,17 @@ const NotFound = lazy(() => import('./routes/NotFound'));
 
 export const DataContext: React.Context<IData> = React.createContext({
     welcome: {
-        title: 'Welcome!',
+        title: 'Hello!',
+        frontImage: {
+            name: 'projects/bahari/logo',
+            type: 'svg',
+            alt: 'Front picture',
+        },
         blogs: [
             {
-                title: 'Uno',
                 paragraphs: [
-                    'Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo.'
-                ],
-                links: [
-                    {
-                        href: 'https://github.com/portalen-io',
-                        btnText: 'C#'
-                    },
-                    {
-                        href: 'https://github.com/portalen-io',
-                        btnText: 'C++'
-                    }
+                    "My name is Dennis. I'm currently studying programming for game development at Futuregames, a higher vocational school in Stockholm.",
+                    "This website is currently under construction, but will in it's finished state function as my portfolio."
                 ]
             }
         ]
@@ -37,181 +32,78 @@ export const DataContext: React.Context<IData> = React.createContext({
     projects: [
         {
             id: '2cbdb7fb-4404-424c-858e-7706796b9ba3',
-            path: '/project/spel-1',
-            name: 'Spel 1',
-            description: 'Det handlar om 1',
-            fullWidth: true,
+            path: '/project/bahari',
+            name: 'Bahari',
+            description: "Inspired by games like Abzu and Pokemon Snap, we present to you: Bahari, an atmospheric single player adventure game focusing on exploration and photography. You control our main character, a free diver whose passion for underwater photography will take you to discover the beautiful depths of the sea.The atmospheric underwater environments and the lack of enemies set a tone that produces a relaxing and calm experience, but that still entices you to explore the surroundings even further.As a free diver you need to keep track of your oxygen level as well as the beats of your heart and also make sure to refill your exhausted lungs from time to time.You’ll also be equipped with your trusty camera, with which you'll be able to photograph the terrain and fishes around you. During your adventure you’ll come across hidden treasures that will unravel missing pieces of your past. Bahari is our tribute to nature and a depiction of a sea life that may not exist in the not so distant future.The game is developed for PC and it is designed to be played by people of all ages thanks to its non- violent gameplay.We hope that you enjoy it.",
             thumbnailFile: {
-                name: 'gwent',
-                type: 'jpg',
-                alt: 'qwent game',
+                name: 'projects/bahari/5',
+                type: 'png',
+                alt: 'Bahari',
             },
+            fullWidth: true,
             iframe: {
-                src: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
+                src: 'https://www.youtube.com/embed/bpsRmvPrPB8'
             },
-            asides: [
-                {
-                    thumbnailFile: {
-                        name: 'flying-robots',
-                        alt: 'flying-robots game',
-                        type: 'jpg'
-                    },
-                    links: [
-                        {
-                            href: 'https://github.com/portalen-io',
-                            btnText: 'Github'
-                        }
-                    ],
-                    chatBubble: true
-                },
-                {
-                    title: 'projectBlogs35412313',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11231231'],
-                    links: [
-                        {
-                            href: 'https://github.com/portalen-io',
-                            btnText: 'Github'
-                        },
-                        {
-                            href: 'https://github.com/portalen-io',
-                            btnText: 'C#'
-                        },
-                        {
-                            href: 'https://github.com/portalen-io',
-                            btnText: 'C++'
-                        }
-                    ],
-                    chatBubble: true
-                },
-                {
-                    title: 'projectBlogs5412asdasdasd313',
-                    paragraphs: ['VetprojectBlogsnlägg! 11231231'],
-                    chatBubble: true
-                }
-            ],
             blogs: [
                 {
-                    thumbnailFile: {
-                        name: 'flying-robots',
-                        alt: 'flying-robots game',
-                        type: 'jpg'
-                    },
-                    title: 'Ganska coolt 11',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11'],
-                    links: [
-                        {
-                            href: 'https://github.com/portalen-io',
-                            btnText: 'Github'
-                        }
-                    ],
-                    createdAt: '2020-06-15',
-                    updatedAt: '2020-09-28'
-                },
-                {
-                    title: 'Ganska coolt 11',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11']
+                    paragraphs: [
+                        "Inspired by games like Abzu and Pokemon Snap, we present to you: Bahari, an atmospheric single player adventure game focusing on exploration and photography. You control our main character, a free diver whose passion for underwater photography will take you to discover the beautiful depths of the sea.The atmospheric underwater environments and the lack of enemies set a tone that produces a relaxing and calm experience, but that still entices you to explore the surroundings even further.As a free diver you need to keep track of your oxygen level as well as the beats of your heart and also make sure to refill your exhausted lungs from time to time.You’ll also be equipped with your trusty camera, with which you'll be able to photograph the terrain and fishes around you.During your adventure you’ll come across hidden treasures that will unravel missing pieces of your past.Bahari is our tribute to nature and a depiction of a sea life that may not exist in the not so distant future.The game is developed for PC and it is designed to be played by people of all ages thanks to its non- violent gameplay.We hope that you enjoy it."
+                    ]
                 }
             ]
         },
         {
             id: '842d1d8d-5fef-49d5-a8a9-794b61f7d35e',
-            path: '/project/spel-2',
-            name: 'Spel 2',
-            description: 'Det handlar om 2',
+            path: '/project/skull-patrol',
+            name: 'Skull Patrol',
+            description: "Skull Patrol is a co-op action arcade game, where the goal is for you and a friend to fight off skeletons and their leader, the Summoner, and top the high score list.",
             fullWidth: true,
             thumbnailFile: {
-                name: 'flying-robots',
-                alt: 'flying-robots game',
-                type: 'jpg'
+                name: 'projects/skull-patrol/Menu',
+                alt: 'Skul Patrol',
+                type: 'png'
             },
             iframe: {
-                src: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
+                src: 'https://www.youtube.com/embed/59Xo-saWrFs'
             },
             blogs: [
                 {
-                    title: 'Du 2',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 2'],
-                    createdAt: '2020-06-15',
-                    updatedAt: '2020-09-28'
+                    title: 'Skull Patrol',
+                    paragraphs: [
+                        "Skull Patrol is a co-op action arcade game, where the goal is for you and a friend to fight off skeletons and their leader, the Summoner, and top the high score list.",
+                        "The game does not have a definitive end. The only purpose is to get the highest possible score. The enemies become faster and tougher the further you progress, which is what creates the real challenge.  In order to reach your dream score, it is important to communicate with your friend to strategically plan your moves. The game has a score multiplier that will continually double your  points until any of the players take damage.",
+                        "The skeletons are the core enemies of the game. The first player, controlling Officer Calcium, firstly must shoot the skeletons to trap them in bubbles. Then, the second player, controlling the tank, must shoot the bubbles to bits with their cannon.",
+                        "When you and your friend finally gain 1000 points, the boss called The Summoner appears. This enemy requires better communication to beat since it has new elements, separating it from the skeleton enemies. He will continue appearing when you reach higher scores as well, with even tougher attacks."
+                    ],
 
-                },
-                {
-                    title: 'Ganska coolt 22',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 22']
-                },
-                {
-                    title: 'Ganska coolt 222',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 222']
                 }
             ]
         },
         {
             id: '677d7fd1-5928-453a-a3cc-79d015ec294c',
-            path: '/project/spel-3',
-            name: 'Spel 3',
-            description: 'Det handlar om 3',
+            path: '/project/the-unmoored',
+            name: 'The Unmoored',
+            description: "Unmoored is a first-person puzzle and adventure game made in Unity for PC. The game explores the dark and enigmatic story of Alexandra McCarter—a freelance journalist in the early 1900s—and her atmospheric journey through a tropical island filled with both mystery and suspicion.",
             thumbnailFile: {
-                name: 'arrow',
-                type: 'jpg',
-                alt: 'arrow game'
+                name: 'projects/the-unmoored/5',
+                type: 'png',
+                alt: 'The Unmoored'
             },
-            iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
-            asides: [
-                {
-                    thumbnailFile: {
-                        name: 'flying-robots',
-                        alt: 'flying-robots game',
-                        type: 'jpg'
-                    },
-                    links: [
-                        {
-                            href: 'https://github.com/portalen-io',
-                            btnText: 'Github'
-                        }
-                    ],
-                    createdAt: '2020-06-15',
-                    updatedAt: '2020-09-28',
-                    chatBubble: true
-                },
-                {
-                    title: 'projectBlogs5412asdasdasd313',
-                    paragraphs: ['VetprojectBlogsnlägg! 11231231'],
-                    chatBubble: true
-                }
-            ],
+            iframe: {
+                src: 'https://www.youtube.com/embed/QdiV5Ir1ivY'
+            },
+            fullWidth: true,
             blogs: [
                 {
-                    title: 'Du 3',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 3']
-                },
-                {
-                    title: 'Ganska coolt 33',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 33']
-                },
-                {
-                    title: 'Ganska coolt 333',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 333']
+                    title: "The Unmoored",
+                    paragraphs: [
+                        "Unmoored is a first-person puzzle and adventure game made in Unity for PC. The game explores the dark and enigmatic story of Alexandra McCarter—a freelance journalist in the early 1900s—and her atmospheric journey through a tropical island filled with both mystery and suspicion.",
+                        "A world-renowned archaeologist, Dr. Stanley Moore, has gone missing during his most recent expedition to a tropical island in the Bermuda Triangle.Although a few years have now passed, the incident has managed to stay relevant in media through rumors and various assumptions.",
+                        "Alexandra, or Alex as she calls herself, has for a long time been struggling to makes ends meet and sees an opportunity to get ahead in her career.Alex decides to travel to the island to unravel the mystery, but things do not go as planned.She finds herself involved in troubling events that leave her stranded on the island with nothing but her notebook in hand.",
+                        "On the island, Alex solves puzzles to discover mysterious clues and secrets. Soon, Alex also finds herself making decisions that will dramatically alter her future, her survival is at stake.Help Alexandra explore the islands dark and unfortunate history before she too is forever vanished."
+                    ]
                 }
             ]
-        },
-        {
-            id: '94170ad9-63c8-4513-b48c-1b19efc2c74a',
-            path: '/project/spel-4',
-            name: 'Spel 4',
-            description: 'Det handlar om 4',
-            iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
-        },
-        {
-            id: '94170ad9-63c8-4513-b48c-1b19efc2c74a',
-            path: '/project/spel-5',
-            name: 'Spel 5',
-            description: 'Det handlar om 5',
-            fullWidth: true,
-            thumbnailFile: {
-                name: 'flying-robots',
-                alt: 'arrow game',
-                type: 'jpg'
-            }
         }
     ],
     socials: [
@@ -220,16 +112,13 @@ export const DataContext: React.Context<IData> = React.createContext({
                 name: 'github-brand',
                 type: 'svg',
                 alt: 'github'
-            },
-            href: 'https://github.com/portalen-io'
+            }
         }
     ],
     contactBlogs: [
         {
-            title: 'Uno',
-            paragraphs: [
-                'Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo Uno oqinweoqe oqeqo U öåöä åöäöå no oqinweoqe oqeqo'
-            ]
+            title: "",
+            paragraphs: [""],
         }
     ]
 } as IData);

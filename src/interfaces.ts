@@ -16,6 +16,7 @@ export interface IImageFile {
 // Welcome
 export interface IDataWelcome {
     title: string;
+    frontImage?: IImageFile;
     blogs?: IDataProjectsBlog[];
 }
 

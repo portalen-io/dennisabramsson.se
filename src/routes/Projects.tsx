@@ -1,22 +1,12 @@
-import React, { useState, useEffect, useContext, Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
 
-import {
-    IData,
-    IDataProject
-} from '../interfaces';
+import { IData } from '../interfaces';
 
 import { DataContext } from '../App';
 import { mapProjects } from '../components/FeaturedProjects';
 
 export default function Projects(): JSX.Element {
     const data: IData = useContext(DataContext);
-
-    const [projects, setProjects] = useState<IDataProject[]>([]);
-
-    useEffect(() => {
-        if (data.projects) setProjects(data.projects);
-    }, [data]);
 
     return (
         <div id="Projects">

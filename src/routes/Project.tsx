@@ -136,7 +136,7 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
             const notFirstLink: boolean = links.indexOf(link) !== 0;
 
             return (
-                <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank">
+                <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank" rel="noopener noreferrer">
                     {link.btnText}
                 </a>
             );

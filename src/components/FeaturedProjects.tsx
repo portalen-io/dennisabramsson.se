@@ -59,7 +59,7 @@ export const mapProjects = (projects: IDataProject[], projectsQuantity?: number)
                             <h5 className="card-title">{name}</h5>
 
                             {
-                                description && <p className="card-text">{description}</p>
+                                description && <p className="card-text text-truncate text-nowrap">{description}</p>
                             }
 
                             <NavLink to={path} className="btn btn-primary stretched-link">

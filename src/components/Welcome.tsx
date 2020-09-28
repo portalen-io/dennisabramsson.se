@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import {
     IData,
-    IDataProjectsBlog,
+    IDataProjectsBlog,
     IDataProjectLink
 } from '../interfaces';
 
@@ -15,13 +15,18 @@ export const Welcome = (): JSX.Element => {
         <section className="Welcome py-5">
             <div className="container p-3">
                 <div className="row">
-
                     <div className="col-xl-6">
-                        <img src={`${process.env.PUBLIC_URL}/flying-robots.jpg`} alt="Picture of me!" className="d-block mx-auto mx-xl-0 ml-xl-auto w-100" />
+                        {
+                            data.welcome.frontImage &&
+                            <img src={`${process.env.PUBLIC_URL}/${data.welcome.frontImage.name}.${data.welcome.frontImage.type}`} alt={data.welcome.frontImage.alt} className="d-block mx-auto mx-xl-0 ml-xl-auto w-100" style={{ maxHeight: '400px' }} />
+                        }
                     </div>
 
                     <div className="col-xl-6 p-4" >
-                        <h1 id="front-title" className="display-1 mb-4">{data.welcome.title}</h1>
+                        {
+                            data.welcome.title &&
+                            <h1 id="front-title" className="display-1 mb-4">{data.welcome.title}</h1>
+                        }
 
                         {
                             data.welcome.blogs && mapBlogs(data.welcome.blogs)
@@ -44,7 +49,7 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
         const notFirstLink: boolean = links.indexOf(link) !== 0;
 
         return (
-            <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank">
+            <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank" rel="noopener noreferrer">
                 {link.btnText}
             </a>
         );
@@ -57,7 +62,10 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
             }
 
             <div className="card-body">
-                <h4 className="card-title">{blog.title}</h4>
+                {
+                    blog.title &&
+                    <h4 className="card-title">{blog.title}</h4>
+                }
 
                 {
                     blog.paragraphs && mapParagraphs(blog.paragraphs)

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { IData, IDataSocial } from '../interfaces';
@@ -49,7 +49,7 @@ export const mapSocials = (socials: IDataSocial[]) => {
         const { name, type, alt } = social.ikon;
 
         return (
-            <a key={socials.indexOf(social)} href={social.href} target="_blank">
+            <a key={socials.indexOf(social)} href={social.href} target="_blank" rel="noopener noreferrer">
                 <img src={`${process.env.PUBLIC_URL}/${name}.${type}`} alt={alt} height="36px" />
             </a>
         );

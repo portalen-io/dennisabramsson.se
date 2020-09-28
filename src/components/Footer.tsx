@@ -2,7 +2,8 @@ import React, { useContext, Fragment } from 'react';
 
 import {
     IData,
-    IDataProjectsBlog
+    IDataProjectsBlog,
+    IDataProjectLink
 } from '../interfaces';
 
 import { DataContext } from '../App';
@@ -60,6 +61,16 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
         );
     });
 
+    const mapLinks = (links: IDataProjectLink[]) => links.map((link: IDataProjectLink) => {
+        const notFirstLink: boolean = links.indexOf(link) !== 0;
+
+        return (
+            <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank" rel="noopener noreferrer">
+                {link.btnText}
+            </a>
+        );
+    });
+
     return (
         <article key={blogs.indexOf(blog)}>
             {
@@ -70,6 +81,10 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
 
             {
                 blog.paragraphs && mapParagraphs(blog.paragraphs)
+            }
+
+            {
+                blog.links && mapLinks(blog.links)
             }
         </article>
     );
