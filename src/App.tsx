@@ -14,7 +14,7 @@ const NotFound = lazy(() => import('./routes/NotFound'));
 
 export const DataContext: React.Context<IData> = React.createContext({
     welcome: {
-        title: 'Hi!',
+        title: 'Hello!',
         frontImage: {
             name: 'projects/bahari/logo',
             type: 'svg',
