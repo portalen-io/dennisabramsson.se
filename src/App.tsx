@@ -13,20 +13,40 @@ const Project = lazy(() => import('./routes/Project'));
 const NotFound = lazy(() => import('./routes/NotFound'));
 
 export const DataContext: React.Context<IData> = React.createContext({
+    welcome: {
+        title: 'Welcome!',
+        blogs: [
+            {
+                title: 'Uno',
+                paragraphs: [
+                    'Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo.'
+                ],
+                links: [
+                    {
+                        href: 'https://github.com/portalen-io',
+                        btnText: 'C#'
+                    },
+                    {
+                        href: 'https://github.com/portalen-io',
+                        btnText: 'C++'
+                    }
+                ]
+            }
+        ]
+    },
     projects: [
         {
             id: '2cbdb7fb-4404-424c-858e-7706796b9ba3',
             path: '/project/spel-1',
             name: 'Spel 1',
             description: 'Det handlar om 1',
+            fullWidth: true,
             thumbnailFile: {
                 name: 'gwent',
                 type: 'jpg',
                 alt: 'qwent game',
-                fullWidth: false
             },
             iframe: {
-                fullWidth: false,
                 src: 'https://www.youtube.com/embed/GQ3cTuSH9zM'
             },
             asides: [
@@ -35,15 +55,38 @@ export const DataContext: React.Context<IData> = React.createContext({
                         name: 'flying-robots',
                         alt: 'flying-robots game',
                         type: 'jpg'
-                    }
+                    },
+                    links: [
+                        {
+                            href: 'https://github.com/portalen-io',
+                            btnText: 'Github'
+                        }
+                    ],
+                    chatBubble: true
                 },
                 {
                     title: 'projectBlogs35412313',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11231231']
+                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11231231'],
+                    links: [
+                        {
+                            href: 'https://github.com/portalen-io',
+                            btnText: 'Github'
+                        },
+                        {
+                            href: 'https://github.com/portalen-io',
+                            btnText: 'C#'
+                        },
+                        {
+                            href: 'https://github.com/portalen-io',
+                            btnText: 'C++'
+                        }
+                    ],
+                    chatBubble: true
                 },
                 {
                     title: 'projectBlogs5412asdasdasd313',
-                    paragraphs: ['VetprojectBlogsnlägg! 11231231']
+                    paragraphs: ['VetprojectBlogsnlägg! 11231231'],
+                    chatBubble: true
                 }
             ],
             blogs: [
@@ -54,7 +97,15 @@ export const DataContext: React.Context<IData> = React.createContext({
                         type: 'jpg'
                     },
                     title: 'Ganska coolt 11',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11']
+                    paragraphs: ['Vet att vi kan göra många blog inlägg! 11'],
+                    links: [
+                        {
+                            href: 'https://github.com/portalen-io',
+                            btnText: 'Github'
+                        }
+                    ],
+                    createdAt: '2020-06-15',
+                    updatedAt: '2020-09-28'
                 },
                 {
                     title: 'Ganska coolt 11',
@@ -67,6 +118,7 @@ export const DataContext: React.Context<IData> = React.createContext({
             path: '/project/spel-2',
             name: 'Spel 2',
             description: 'Det handlar om 2',
+            fullWidth: true,
             thumbnailFile: {
                 name: 'flying-robots',
                 alt: 'flying-robots game',
@@ -78,7 +130,10 @@ export const DataContext: React.Context<IData> = React.createContext({
             blogs: [
                 {
                     title: 'Du 2',
-                    paragraphs: ['Vet att vi kan göra många blog inlägg! 2']
+                    paragraphs: ['Vet att vi kan göra många blog inlägg! 2'],
+                    createdAt: '2020-06-15',
+                    updatedAt: '2020-09-28'
+
                 },
                 {
                     title: 'Ganska coolt 22',
@@ -101,6 +156,29 @@ export const DataContext: React.Context<IData> = React.createContext({
                 alt: 'arrow game'
             },
             iframeSrc: 'https://www.youtube.com/embed/GQ3cTuSH9zM',
+            asides: [
+                {
+                    thumbnailFile: {
+                        name: 'flying-robots',
+                        alt: 'flying-robots game',
+                        type: 'jpg'
+                    },
+                    links: [
+                        {
+                            href: 'https://github.com/portalen-io',
+                            btnText: 'Github'
+                        }
+                    ],
+                    createdAt: '2020-06-15',
+                    updatedAt: '2020-09-28',
+                    chatBubble: true
+                },
+                {
+                    title: 'projectBlogs5412asdasdasd313',
+                    paragraphs: ['VetprojectBlogsnlägg! 11231231'],
+                    chatBubble: true
+                }
+            ],
             blogs: [
                 {
                     title: 'Du 3',
@@ -128,11 +206,30 @@ export const DataContext: React.Context<IData> = React.createContext({
             path: '/project/spel-5',
             name: 'Spel 5',
             description: 'Det handlar om 5',
+            fullWidth: true,
             thumbnailFile: {
                 name: 'flying-robots',
                 alt: 'arrow game',
                 type: 'jpg'
             }
+        }
+    ],
+    socials: [
+        {
+            ikon: {
+                name: 'github-brand',
+                type: 'svg',
+                alt: 'github'
+            },
+            href: 'https://github.com/portalen-io'
+        }
+    ],
+    contactBlogs: [
+        {
+            title: 'Uno',
+            paragraphs: [
+                'Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo Uno oqinweoqe oqeqo U öåöä åöäöå no oqinweoqe oqeqo'
+            ]
         }
     ]
 } as IData);

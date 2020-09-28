@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+
+import { IData, IDataSocial } from '../interfaces';
+import { DataContext } from '../App';
 
 import { scrollTo } from '../scrollTo'
 
 export const Header = (): JSX.Element => {
+    const data: IData = useContext(DataContext);
+
     return (
         <header className="Header">
             <div className="container py-2">
@@ -30,13 +35,23 @@ export const Header = (): JSX.Element => {
                         </div>
 
                         <div className="ml-auto">
-                            <a href="https://github.com/portalen-io">
-                                <i className="fab fa-github social-link"></i>
-                            </a>
+                            { data.socials && mapSocials(data.socials) }
                         </div>
                     </div>
                 </nav>
             </div>
         </header>
     );
+};
+
+export const mapSocials = (socials: IDataSocial[]) => {
+    return socials.map((social) => {
+        const { name, type, alt } = social.ikon;
+
+        return (
+            <a key={socials.indexOf(social)} href={social.href} target="_blank">
+                <img src={`${process.env.PUBLIC_URL}/${name}.${type}`} alt={alt} height="36px" />
+            </a>
+        );
+    });
 };

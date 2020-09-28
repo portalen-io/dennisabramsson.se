@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { IDataProjectsBlog } from '../interfaces';
+import {
+    IData,
+    IDataProjectsBlog,
+    IDataProjectLink
+} from '../interfaces';
+
+import { DataContext } from '../App';
 
 export const Welcome = (): JSX.Element => {
-    const data = {
-        welcomeTitle: 'Welcome',
-        blogs: [
-            {
-                title: 'Uno',
-                paragraphs: [
-                    'Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo Uno oqinweoqe oqeqo U öåöä åöäöå no oqinweoqe oqeqo '
-                ]
-            }
-        ]
-    };
+    const data: IData = useContext(DataContext);
 
     return (
         <section className="Welcome py-5">
@@ -25,10 +21,10 @@ export const Welcome = (): JSX.Element => {
                     </div>
 
                     <div className="col-xl-6 p-4" >
-                        <h1 id="front-title" className="display-1 mb-4">{data.welcomeTitle}</h1>
+                        <h1 id="front-title" className="display-1 mb-4">{data.welcome.title}</h1>
 
                         {
-                            mapBlogs && mapBlogs(data.blogs)
+                            data.welcome.blogs && mapBlogs(data.welcome.blogs)
                         }
                     </div>
                 </div>
@@ -44,6 +40,16 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
         );
     });
 
+    const mapLinks = (links: IDataProjectLink[]) => links.map((link: IDataProjectLink) => {
+        const notFirstLink: boolean = links.indexOf(link) !== 0;
+
+        return (
+            <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank">
+                {link.btnText}
+            </a>
+        );
+    });
+
     return (
         <article key={blogs.indexOf(blog)} className="blog mb-4 card box-shadow-2">
             {
@@ -55,6 +61,10 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
 
                 {
                     blog.paragraphs && mapParagraphs(blog.paragraphs)
+                }
+
+                {
+                    blog.links && mapLinks(blog.links)
                 }
             </div>
         </article>

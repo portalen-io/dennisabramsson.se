@@ -52,7 +52,7 @@ export const mapProjects = (projects: IDataProject[], projectsQuantity?: number)
                 <div key={id} className="col-xl-4 col-lg-6 mb-4">
                     <article className="card">
                         {
-                            thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${thumbnailFile.name}.${thumbnailFile?.type}`} className="card-img-top" alt={name} />
+                            thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${thumbnailFile.name}.${thumbnailFile.type}`} className="card-img-top" alt={thumbnailFile.alt} />
                         }
 
                         <div className="card-body">

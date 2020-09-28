@@ -1,33 +1,76 @@
-import React from 'react';
+import React, { useContext, Fragment } from 'react';
 
-import { mapBlogs } from './Welcome';
+import {
+    IData,
+    IDataProjectsBlog
+} from '../interfaces';
 
-const blogsxx = [
-    {
-        title: 'Uno',
-        paragraphs: [
-            ' <a href="Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo Uno oqinweoqe oqeqo U öåöä åöäöå no oqinweoqe oqeqo '
-        ]
-    }
-]
+import { DataContext } from '../App';
+
+import { mapSocials } from './Header';
 
 export const Footer = (): JSX.Element => {
+    const data: IData = useContext(DataContext);
+
     return (
-        <footer id="Footer" className="Footer bg-white border-top">
-            <div className="container p-3">
-                <div className="p-4">
-                    <h1 id="front-title" className="display-1 mb-4 text-center">Contacts</h1>
+        <Fragment>
+            <footer id="Footer" className="Footer bg-white border-top">
+                <div className="container p-3 text-center">
+                    <div className="d-flex flex-column align-items-center p-4">
+                        <h1 id="front-title" className="display-1 mb-4 text-center">Contacts</h1>
 
-                    <p className="text-center m-auto" style={{ maxWidth: '600px' }}>
-                        Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqo Uno oqinweoqe oqeqoUno oqinweoqe oqeqoUno oqinweoqe oqeqo Uno oqinweoqe oqeqo U öåöä åöäöå no oqinweoqe oqeqo
-                    </p>
+                        {
+                            data.contactBlogs &&
+                            <div style={{ maxWidth: '600px' }}>
+                                {
+                                    mapBlogs(data.contactBlogs)
+                                }
+                            </div>
+                        }
 
-                    <a href="mailto:kontakt@dennisabramsson.se">
-                        <i className="fas fa-envelope"></i>
-                        kontakt@dennisabramsson.se
-                    </a>
+                        <a href="mailto:kontakt@dennisabramsson.se" className="my-3">
+                            kontakt@dennisabramsson.se
+                        </a>
+
+                        {
+                            data.socials &&
+                            <div className="mt-3" style={{ maxWidth: '600px' }}>
+                                {
+                                    mapSocials(data.socials)
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </footer>
+
+            <div className="bg-light">
+                <div className="container p-3 text-center">
+                    &copy; All rights reserved
                 </div>
             </div>
-        </footer>
+        </Fragment>
     );
 };
+
+export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map((blog: IDataProjectsBlog) => {
+    const mapParagraphs = (paragraphs: string[]) => paragraphs.map((paragraph: string) => {
+        return (
+            <p key={paragraphs.indexOf(paragraph)}>{paragraph}</p>
+        );
+    });
+
+    return (
+        <article key={blogs.indexOf(blog)}>
+            {
+                blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
+            }
+
+            <h4>{blog.title}</h4>
+
+            {
+                blog.paragraphs && mapParagraphs(blog.paragraphs)
+            }
+        </article>
+    );
+});

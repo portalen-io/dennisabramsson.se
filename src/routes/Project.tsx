@@ -1,10 +1,12 @@
 import React, { Suspense, useState, useEffect, Fragment, useContext } from 'react';
 import { Route, RouteComponentProps, Switch, Redirect } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import {
     IData,
     IDataProject,
-    IDataProjectsBlog
+    IDataProjectsBlog,
+    IDataProjectLink
 } from '../interfaces';
 
 import { DataContext } from '../App';
@@ -52,15 +54,7 @@ export default function Project(props: RouteComponentProps<IProjectRouteProps>):
 
 
 const ProjectContent = (project: IDataProject): JSX.Element => {
-    const [fullWidth, setFullWidth] = useState<boolean>(false);
-
     const weHaveDisplays: boolean = (project.iframe !== null || project.thumbnailFile !== null);
-    const displaysFullWidth: boolean = (project.iframe?.fullWidth === true || ((project.thumbnailFile && project.thumbnailFile.fullWidth) === true));
-    console.log(displaysFullWidth);
-
-    const a = project.thumbnailFile?.fullWidth !== (null || false);
-    const b = project.iframe?.fullWidth !== (null || false);
-
 
     const IFrame = (): JSX.Element => {
         return (
@@ -77,36 +71,14 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
         );
     };
 
-    useEffect(() => {
-        const data = {
-            thumbnailFile: {
-                name: 'gwent',
-                type: 'jpg',
-                alt: 'qwent game',
-                fullWidth: false
-            }
-        }
-
-        console.log((data.thumbnailFile.fullWidth === true))
-    })
-
-    useEffect(() => {
-  
-        console.log(fullWidth);
-
-    }, [fullWidth])
-    /*
-    let x;
-
-    if (project.iframe)
-        project.iframe?.fullWidth
-        x = true
-    else (!project.iframe && project.thumbnailFile)
-           project.thumbnailFile?.fullWidth
-            x = true;
-*/
     return (
         <div className="ProjectContent bg-light">
+            <Helmet>
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:title" content={project.name} />
+                <meta property="og:description" content={project.description} />
+            </Helmet>
+
             <div className="container p-3">
                 <h1 className="display-1 my-4 text-center">{project.name}</h1>
 
@@ -114,7 +86,7 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
                     {
                         weHaveDisplays &&
                         <Fragment>
-                            <div className={`${fullWidth ? 'col-12' : 'col-lg-8'}`}>
+                            <div className={`${project.fullWidth ? 'col-12' : 'col-lg-8'}`}>
                                 {
                                     project.iframe && <IFrame />
                                 }
@@ -126,23 +98,19 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
 
                             {
                                 project.asides &&
-                                <div className={`${fullWidth ? 'col-lg-6' : 'col-4'}`}>
-                                    {mapBlogs(project.asides)}
+                                <div className={`${project.fullWidth ? 'col-lg-6 py-4' : 'col-lg-4'}`}>
+                                    {mapBlogs(project.asides, true)}
                                 </div>
                             }
                         </Fragment>
                     }
 
                     {
-                        project.asides && !fullWidth &&
-                        <div className="col-12">
-                            {mapBlogs(project.asides)}
-                        </div>
-                    }
-
-                    {
-                        <div className={`${fullWidth ? 'col-lg-6' : 'col-12'}`}>
-                            {project.blogs && mapBlogs(project.blogs)}
+                        project.blogs &&
+                        <div className={`p-3 ${project.fullWidth ? 'col-lg-6 py-4' : 'col-12'} ${(!project.asides && project.fullWidth) ? 'col-lg-12' : ''}`}>
+                            <div className={`card box-shadow-2 ${project.fullWidth ? '' : 'mt-4'}`}>
+                                {project.blogs && mapBlogs(project.blogs)}
+                            </div>
                         </div>
                     }
                 </div>
@@ -151,82 +119,80 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
     );
 };
 
-// style={{ minHeight: '300px' }}
-
-const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => {
+export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Element[] => {
     return blogs.map((blog: IDataProjectsBlog): JSX.Element => {
+        const firstBlog: boolean = blogs.indexOf(blog) === 0;
+        const chatBubble = ((blog.title || blog.paragraphs || blog.links) && blog.chatBubble);
+        const normalBlog: boolean = !aside;
+        const lastNormalBlog: boolean = (normalBlog && (blogs.indexOf(blog) === blogs.length - 1))
+
         const mapParagraphs = (paragraphs: string[]) => paragraphs.map((paragraph: string) => {
             return (
                 <p key={paragraphs.indexOf(paragraph)} className="card-text">{paragraph}</p>
             );
         });
 
+        const mapLinks = (links: IDataProjectLink[]) => links.map((link: IDataProjectLink) => {
+            const notFirstLink: boolean = links.indexOf(link) !== 0;
+
+            return (
+                <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank">
+                    {link.btnText}
+                </a>
+            );
+        });
+
         return (
-            <article key={blogs.indexOf(blog)} className="card box-shadow-2 mt-4">
+            <Fragment key={blogs.indexOf(blog)}>
                 {
-                    blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
+                    (normalBlog && !firstBlog) &&
+                    <hr />
                 }
 
-                <div className={blog.title || blog.paragraphs ? 'card-body' : ''}>
+                <article className={`mt-4 ${blog.chatBubble ? 'card box-shadow-2' : ''} ${(firstBlog || normalBlog) ? 'mt-lg-0' : ''}`}>
                     {
-                        blog.title && <h5 className="card-title">{blog.title}</h5>
+                        blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
                     }
 
-                    {
-                        blog.paragraphs && mapParagraphs(blog.paragraphs)
-                    }
-                </div>
-            </article>
+                    <div className={`${(normalBlog || chatBubble) ? 'card-body' : ''} ${((normalBlog && firstBlog) ? 'mt-2' : '')}`}>
+                        {
+                            blog.title && normalBlog && <h3 className="card-title">{blog.title}</h3>
+                        }
+
+                        {
+                            blog.title && !normalBlog && <h5 className="card-title">{blog.title}</h5>
+                        }
+
+                        {
+                            blog.paragraphs && mapParagraphs(blog.paragraphs)
+                        }
+
+                        {
+                            blog.links && mapLinks(blog.links)
+                        }
+
+                        {
+                            (blog.createdAt || blog.updatedAt) &&
+                            <div className="row">
+                                {
+                                    blog.updatedAt &&
+                                    <small className="card-text text-muted mt-2 col-auto">Last updated: {blog.updatedAt}</small>
+                                }
+
+                                {
+                                    blog.createdAt &&
+                                    <small className="card-text text-muted mt-2 col-auto">Created: {blog.createdAt}</small>
+                                }
+                            </div>
+                        }
+                    </div>
+                </article>
+
+                {
+                    lastNormalBlog &&   
+                    <br />
+                }
+            </Fragment>
         );
     });
 };
-
-
-/*
- *    {
-                    description &&
-                    <article className="card box-shadow-2 col-lg-6 mx-auto mb-4">
-                        <div className="card-body">
-                            <p className="card-text">{description}</p>
-                        </div>
-                    </article>
-
-                }
-
-                <div className="row">
-                    {
-                        (iframe && iframe.src || thumbnailFile) &&
-
-                        iframe && iframe.src &&
-                        <div className={`${iframe.fullWidth ? '' : 'col-lg-8'}`}>
-                            <IFrame />
-                        </div>
-                    }
-
-                    {
-                        !iframe && thumbnailFile &&
-                        <div className={`${thumbnailFile.fullWidth ? '' : 'col-lg-8'}`}>
-                            <img src={`${process.env.PUBLIC_URL}/${thumbnailFile.name}.${thumbnailFile?.type}`} className="card-img-top" alt={thumbnailFile.alt} />
-                        </div>
-                    }
-
-                    {
-                        projectBlogs &&
-                        <div className={`${iframe && (iframe.fullWidth || thumbnailFile && thumbnailFile.fullWidth) ? '' : 'col-lg-4'}`}>
-                            { // fix if either iframe.fullWdith or thumbnail fullWdith
-                                mapProjectBlog(projectBlogs, true)
-                            }
-                        </div>
-                    }
-                </div>
-
-                {
-                    blogs &&
-                    <div className="row justify-content-center">
-                        {
-                            mapProjectBlog(blogs)
-                        }
-                    </div>
-                }
- *
- * */
