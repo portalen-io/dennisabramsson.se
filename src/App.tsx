@@ -59,7 +59,7 @@ export const DataContext: React.Context<IData> = React.createContext({
             description: "Skull Patrol is a co-op action arcade game, where the goal is for you and a friend to fight off skeletons and their leader, the Summoner, and top the high score list.",
             fullWidth: true,
             thumbnailFile: {
-                name: 'projects/skull-patrol/Menu',
+                name: 'projects/skull-patrol/Menuu',
                 alt: 'Skul Patrol',
                 type: 'png'
             },
