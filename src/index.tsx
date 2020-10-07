@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import './styles/index.min.css';
@@ -40,9 +40,9 @@ declare global {
 
 ReactDOM.render(
     <React.StrictMode>
-        <HashRouter>
+        <Router>
             <Route component={App} />
-        </HashRouter>
+        </Router>
     </React.StrictMode>,
     document.getElementById('App')
 );
