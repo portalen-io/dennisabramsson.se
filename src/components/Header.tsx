@@ -34,9 +34,14 @@ export const Header = (): JSX.Element => {
                             </a>
                         </div>
 
-                        <div className="ml-auto">
-                            { data.socials && mapSocials(data.socials) }
-                        </div>
+                        {
+                            data.socials &&
+                            <div className="container-fluid">
+                                <div className="row align-items-center justify-content-center justify-content-lg-end">
+                                    { mapSocials(data.socials) }
+                                </div>
+                            </div>
+                        }
                     </div>
                 </nav>
             </div>
@@ -49,7 +54,7 @@ export const mapSocials = (socials: IDataSocial[]) => {
         const { name, type, alt } = social.ikon;
 
         return (
-            <a key={socials.indexOf(social)} href={social.href} target="_blank" rel="noopener noreferrer">
+            <a key={socials.indexOf(social)} href={social.href} target="_blank" rel="noopener noreferrer" className="col flex-grow-0 p-2">
                 <img src={`${process.env.PUBLIC_URL}/${name}.${type}`} alt={alt} height="36px" />
             </a>
         );
