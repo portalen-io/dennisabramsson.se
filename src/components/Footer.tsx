@@ -29,7 +29,7 @@ export const Footer = (): JSX.Element => {
                             </div>
                         }
 
-                        <a href="mailto:kontakt@dennisabramsson.se" className="my-3">
+                        <a href="mailto:dennis.abramsson@futuregames.nu" className="my-3">
                             kontakt@dennisabramsson.se
                         </a>
 

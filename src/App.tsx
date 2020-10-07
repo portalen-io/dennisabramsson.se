@@ -14,62 +14,30 @@ const NotFound = lazy(() => import('./routes/NotFound'));
 
 export const DataContext: React.Context<IData> = React.createContext({
     welcome: {
-        title: 'Hello!',
+        title: 'Welcome to my portfolio!',
         frontImage: {
             name: 'projects/me',
-            type: 'jpg',
+            type: 'png',
             alt: 'Front picture',
         },
         blogs: [
             {
                 paragraphs: [
-                    "My name is Dennis. I'm currently studying programming for game development at Futuregames, a higher vocational school in Stockholm.",
-                    "This website is currently under construction, but will in it's finished state function as my portfolio."
-                ]
+                    "My name is Dennis Abramsson and I'm currently a student at Futuregames.",
+                    "I'm a video game enthusiast and have been playing games since as long as I can remember. So when I fell over the thought to learn how to create games it felt natural.",
+                    "I started out learning how Unity works and started to familiarize myself with C# syntax and the libraries in Unity in the beginning of 2019. After a few months I was able to produce the worksample that got me accepted into Futuregames and I haven't looked back since.",
+                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely and I've also learned a lot working with both Unreal Engine and C++.",
+                    "At the time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines than programming. You can see most of them below."
+                    ],
             }
         ]
     },
     projects: [
         {
-            id: '2cbdb7fb-4404-424c-858e-7706796b9ba3',
-            path: '/project/bahari',
-            name: 'Bahari',
-            description: "My second project working with a team",
-            thumbnailFile: {
-                name: 'projects/bahari/5',
-                type: 'png',
-                alt: 'Bahari',
-            },
-            iframe: {
-                src: 'https://www.youtube.com/embed/bpsRmvPrPB8'
-            },
-            fullWidth: true,
-            asides: [
-                {
-                    title: 'Project Information',
-                    paragraphs: [
-                        "Tools used: Unreal Engine, Visual Studio, C++",
-                        "Team Size: 14",
-                        "Project Time: 4 weeks",
-                        "Summary: Bahari, an atmospheric single player adventure game focusing on exploration and photography. You control our main character, a free diver whose passion for underwater photography will take you to discover the beautiful depths of the sea.",
-                    ],
-                    chatBubble: true
-                }
-            ],
-            blogs: [
-                {
-                    title: "Role: Programmer",
-                    paragraphs: [
-                        "During this project I was mainly focused on setting up the photograph mechanic along with it's photo album UI.",
-                    ]
-                }
-            ]
-        },
-        {
             id: '842d1d8d-5fef-49d5-a8a9-794b61f7d35e',
             path: '/project/skull-patrol',
             name: 'Skull Patrol',
-            description: "My first school project working with a team",
+            description: "My first team project working in Unity",
             fullWidth: true,
             thumbnailFile: {
                 name: 'projects/skull-patrol/Menuu',
@@ -83,7 +51,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                 {
                     title: 'Project Information',
                     paragraphs: [
-                        "Tools used: Unity Engine, Visual Studio, C#",
+                        "Tools used: Unity Engine, Visual Studio, C#, Perforce",
                         "Team Size: 6",
                         "Project Time: 2 weeks",
                         "Summary: Skull Patrol is a co-op action arcade game, where the goal is for you and a friend to fight off skeletons and their leader, the Summoner, and top the high score list.",
@@ -112,10 +80,47 @@ export const DataContext: React.Context<IData> = React.createContext({
             ]
         },
         {
+            id: '2cbdb7fb-4404-424c-858e-7706796b9ba3',
+            path: '/project/bahari',
+            name: 'Bahari',
+            description: "My first team project working in Unreal Engine",
+            thumbnailFile: {
+                name: 'projects/bahari/5',
+                type: 'png',
+                alt: 'Bahari',
+            },
+            iframe: {
+                src: 'https://www.youtube.com/embed/bpsRmvPrPB8'
+            },
+            fullWidth: true,
+            asides: [
+                {
+                    title: 'Project Information',
+                    paragraphs: [
+                        "Tools used: Unreal Engine, Visual Studio, C++, Perforce",
+                        "Team Size: 14",
+                        "Project Time: 4 weeks",
+                        "Summary: Bahari, an atmospheric single player adventure game focusing on exploration and photography. You control our main character, a free diver whose passion for underwater photography will take you to discover the beautiful depths of the sea.",
+                    ],
+                    chatBubble: true
+                }
+            ],
+            blogs: [
+                {
+                    title: "Role: Programmer",
+                    paragraphs: [
+                        "During this project my main responsibility was our photo mechanic. I was tasked to create a way for the player to take a photo of the environment and that photo had to tell if it's motif was a collectable object.",
+                        "To extend this feature I built an UI in collaboration with a 2D Artist to display the photos in an album in game. I also created the end game menu to give a last chance to look at the picture you've taken in peace and quiet.",
+                        "The photo album was split into 2 parts. One where all photos were readily availble and one part where pre painted 2D pictures would fill out slowly as you snap pictures of important motifs slowly revealing the full picture as you progress."
+                    ]
+                }
+            ]
+        },
+        {
             id: '677d7fd1-5928-453a-a3cc-79d015ec294c',
             path: '/project/the-unmoored',
             name: 'The Unmoored',
-            description: "My third and longest project working on a team",
+            description: "Made during stay at home orders",
             thumbnailFile: {
                 name: 'projects/the-unmoored/5',
                 type: 'png',
@@ -129,7 +134,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                 {
                     title: 'Project Information',
                     paragraphs: [
-                        "Tools used: Unity Engine, Visual Studio, C#",
+                        "Tools used: Unity Engine, Visual Studio, C#, Perforce",
                         "Team Size: 10",
                         "Project Time: 7 weeks",
                         "Summary: Unmoored is a first-person puzzle and adventure game made in Unity for PC. The game explores the dark and enigmatic story of Alexandra McCarter—a freelance journalist in the early 1900s—and her atmospheric journey through a tropical island filled with both mystery and suspicion.",
@@ -142,9 +147,14 @@ export const DataContext: React.Context<IData> = React.createContext({
             ],
             blogs: [
                 {
-                    title: "What I've learned/Worked on",
+                    title: "Role: Programmer",
                     paragraphs: [
-                        "",
+                        "This was our second project in Unity. I was quite excited to come back after working in Unreal as I had read a lot about Scriptable Objects and were excited to try it out.",
+                        "Using Scriptable Objects I was able to produce a Dialouge system, an Inventory system with pickupable items and a type of observable value.",
+                        "Towards the end of the project I realized that using Scriptable Objects as an observable value wasn't really efficent or recommended. Atleast not the way I had set it up. It more or less just lead to a bunch of unnecessary calls which slowed down the whole process, but it was a fun experiment in a try to remove coupling between objects.",
+                        "I was the most satisfied with the result of the inventory system. It felt responsive and the designer seemed to have an easy time working with it.",
+                        "The dialouge system was a bit of a mess. It was functional and did what it was supposed to do, but it was not particular user friendly and as convenient to set up as the Inventory. With a bit more time I would have liked to expand upon it with an custom editor script that would visualize the branching of conversations as a tree to make it easer for writers to create more interesting conversations.",
+                        "I was also responsible for the interaction system and the implementation of the Jigsaw puzzle."
                     ]
                 },
             ]
@@ -167,7 +177,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                 {
                     title: 'Project Information',
                     paragraphs: [
-                        "Tools used: Unity Engine, Visual Studio, C#",
+                        "Tools used: Unity Engine, Visual Studio, C#, Github",
                         "Team Size: 1",
                         "Project Time: 4 weeks",
                         "Summary: This project was made as a school project were the main goal was to recreate the Snake game using a single linked list. The bonus goal was adding an AI which goal was to find the food and go to it through the use of A* pathfiniding."
@@ -200,8 +210,8 @@ export const DataContext: React.Context<IData> = React.createContext({
             ikon: {
                 name: 'github-brand',
                 type: 'svg',
-                alt: 'github'
-            }
+                alt: 'github',
+            },
         }
     ],
     contactBlogs: [
