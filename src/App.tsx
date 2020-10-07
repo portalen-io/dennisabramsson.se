@@ -192,8 +192,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "The video linked is a showcase of the pathing for the snake.",
                         "Red tiles are the snakes body and is deemed unpassable. It will do everything in it's power to avoid stepping on those tiles.",
                         "Green tiles are the drawn path that the snake is on. The last piece being it's target tile.",
-                    ],
-                    chatBubble: true
+                    ]
                 },
                 {
                     title: "What I've learned/Worked on",
