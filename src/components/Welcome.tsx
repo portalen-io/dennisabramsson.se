@@ -18,7 +18,7 @@ export const Welcome = (): JSX.Element => {
                     <div className="col-xl-6">
                         {
                             data.welcome.frontImage &&
-                            <img src={`${process.env.PUBLIC_URL}/${data.welcome.frontImage.name}.${data.welcome.frontImage.type}`} alt={data.welcome.frontImage.alt} className="d-block mx-auto mx-xl-0 ml-xl-auto w-100" style={{ maxHeight: '400px' }} />
+                            <img src={`${process.env.PUBLIC_URL}/${data.welcome.frontImage.name}.${data.welcome.frontImage.type}`} alt={data.welcome.frontImage.alt} className="d-block mx-auto mx-xl-0 ml-xl-auto w-100" /*style={{ maxHeight: '400px' }}*/ />
                         }
                     </div>
 
