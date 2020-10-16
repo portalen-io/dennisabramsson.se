@@ -183,7 +183,39 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "Summary: This project was made as a school project were the main goal was to recreate the Snake game using a single linked list. The bonus goal was adding an AI which goal was to find the food and go to it through the use of A* pathfiniding."
                     ],
                     chatBubble: true
-                }
+                },
+                {
+                    title: 'Code Snippets',
+                    chatBubble: true
+                },
+                {
+                    thumbnailFile: {
+                        name: 'projects/snake/tileCode',
+                        type: 'png',
+                        alt: 'nodeCode',
+                    },
+                },
+                {
+                    thumbnailFile: {
+                        name: 'projects/snake/singleLinked',
+                        type: 'png',
+                        alt: 'singleLinkedList',
+                    },
+                },
+                {
+                    thumbnailFile: {
+                        name: 'projects/snake/nodeCode',
+                        type: 'png',
+                        alt: 'nodeCode'
+                    },
+                },       
+                {
+                    thumbnailFile: {
+                        name: 'projects/snake/findPath',
+                        type: 'png',
+                        alt: 'nodeCode'
+                    },
+                }, 
             ],
             blogs: [
                 {
@@ -195,10 +227,22 @@ export const DataContext: React.Context<IData> = React.createContext({
                     ]
                 },
                 {
-                    title: "What I've learned/Worked on",
+                    title: "Tile/SinglyLinkedList",
                     paragraphs: [
-                        "How to use and implement a single linked list.",
-                        "How to implement a simple A* pathfinding algorithm"
+                        "The first two code snippets you can see on the left side is my implementation of a single linked list.",
+                        "The Tile class is just a simple struct that keeps all the information we need to build the list.",
+                        "My SinglyLinkedList class is the actual implemention of the list. It is later used in game to handle the Snakes movement. To handle the movement I simply move the first object in the list one step in the right direction. I then get the last object in the list, which is why I saved it as a variable, and place it right behind the head.",
+                        "That way I am able to produce a result where the snake is moving fluidly without having to move every single body part."
+                    ]
+                },
+                {
+                    title: "Node/FindPath",
+                    paragraphs: [
+                        "The last two snippets are from my implementation of the A* algorithm.",
+                        "The node class is structured similar to the Tile class. It contains the data necessary to calculate the path.",
+                        "FindPath, as the name suggest, is the actual fuction that calculates the path from the start position to the target position. If the target node is found and there is a clear path to it we retrace our steps and add every node to a list. I then reverse the list which results in having a data container I can iterate through to know the next movement for the snake.",
+                        "If no clear path can be found I created logic for the snake to try to survive a bit longer in hope that a path would open up as the snake continues to move. To do this I simply made the snakes tail walkable and put it as the target node for finding a path. Which results in the snake following itself untill a path can be found.",
+                        "If neither the the original target node or the tail can be found the snake will check the closest nodes to see which is walkable and go to it. This gives the snakes a few extra movements in hope of finding a path. If it doesn't find a path it will hit eventually hit a wall or collide with itself trigger the loosing condition."
                     ]
                 }
             ]
