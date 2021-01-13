@@ -26,8 +26,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                 paragraphs: [
                     "My name is Dennis Abramsson and I'm currently a student at Futuregames, a higher vocational school. I'm a video game enthusiast and have been playing games for as long as I can remember so when the opportunity to learn how to create games arose, I jumped on it.",
                     "I started out learning how Unity works and familiarized myself with C# syntax in the beginning of 2019. After a few months I was able to produce the worksample that got me accepted into Futuregames and I haven't looked back since. It's just something about how coding a program feels. How ones emotions changes when a program crashes, into the joy when you get it to work. The best part though by far is that it feels like I'll always be able to learn something new.",
-                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely. I've also learned a lot working with both Unreal Engine and C++.",
-                    "At the I'm time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines. You can see most of them under the projects tab.",
+                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely. I've also learned a lot working with both Unreal Engine and C++. At the I'm time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines. You can some of them under the projects tab.",
                 ],
                 showBody: true,
             links:
@@ -46,7 +45,7 @@ export const DataContext: React.Context<IData> = React.createContext({
             id: '2cbdb7fb-4404-424c-858e-7706796b9ba3',
             path: '/project/bahari',
             name: 'Bahari',
-            description: "My first team project working in Unreal Engine",
+            description: "My first team project working in Unreal Engine.",
             thumbnailFile: {
                 name: 'projects/bahari/5',
                 type: 'png',
@@ -82,7 +81,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                     title: "My Contribution",
                     paragraphs: [
                         "During this project my main responsibility was our photo mechanic. The goal was to allow the player to take photos in game and later look at them through an user interface. The system also needed to be able to tell if the picture taken was a collectable or not as those photos needed to be treated in another way.",
-                        "Creating this proved to be quite a challange for me. Still being very new to programming in general and then getting thrown in to work with Unreal and C++ which I was less experienced with. This was my second game project at Futuregames and was made about a year before I write this so with that said, the code that you will see represented here is not the one I wronte for Bahari. I refactored it soley to be able to show it here as I think my skills have improved too much to show a year old project and be satisfied with it. "
+                        "Creating this proved to be quite a challange for me. Still being very new to programming in general and then getting thrown in to work with Unreal and C++ which I was less experienced with. This was my second game project at Futuregames and was made about a year before I write this so with that said, the code that you will see represented here is not the one I wrote for Bahari. I refactored it soley to be able to show it here as I think my skills have improved too much to show a year old project and be satisfied with it. "
                     ],
 
                 },
@@ -91,10 +90,6 @@ export const DataContext: React.Context<IData> = React.createContext({
                     paragraphs: [
                         "My first thought of an solution was to use screenshots. The idea was that if I can grab a screenshot on player input, then I could save it somewhere accessible and then load it into the game as needed. While I was looking into different ways of taking screenshots in Unreal and loading images as textures I stumbled onto Unreals SceneCapture.",
                         "The scene capture is a camera that can via a render target paint it's viewport onto a material. Great! At this time I was pretty sure I found a good solution, and started looking into how I could build a system around these components that would allow for several pictures to be taken and saved.",
-                        ""
-                    ],
-                    buttonName: "ReadMore",
-                    hiddenParagraphs: [
                         "So to create a photo I primarily needed 3 things. A SceneCaptureComponent, a TextureRenderTarget and a Material. The material had to have a TextureSample connected like so: (See MaterialExample)",
                         "With that material as base, I can later create a Dynamic instance of that material and override the texture sample with a new RenderTarget. This was the only way I could find that would allow me to updated materials during runtime.",
                     ],
@@ -130,7 +125,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                 },
                 {
                     title: "Credits to Team 4!",
-                    hiddenIMG: {
+                    thumbnailFile: {
                         name: "projects/bahari/credits",
                         type: "png",
                         alt: "Team4"
@@ -234,7 +229,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                     title: "Component Manager",
                     paragraphs: [
                         "The component manager is used to register components, add, remove and fetch them from entities. It also keeps track of all componentArrays by storing them in an array with a pointer to their empty parent class.",
-                        "We're storing a shared pointer to the parent class so we can store all component arrays in the same place. The array index corresponds to a component ID. So our Position component would have index 0 as it was the first component we registered. We can then get array index 0 and do a static pointer cast to a component array of type position to get our array of positions. This means that we always need to declare what component we are trying to read/write to. Since all this is done with templated functions, a call to get a specific component would be something along the lines of 'componentManager->GetComponent<Position>(entity) which I think is very readable.",
+                        "We're storing a shared pointer to the parent class so we can store all component arrays in the same place. The array index corresponds to a component ID. So our Position component would have index 0 as it was the first component we registered. We can then get array index 0 and do a pointer cast to a component array of type position to get our array of positions. This means that we always need to declare what component we are trying to read/write to. Since all this is done with templated functions, a call to get a specific component would be something along the lines of 'componentManager->GetComponent<Position>(entity) which I think is very readable.",
                     ],
                     hiddenIMG: {
                         name: "projects/ecs/componentManager",
@@ -248,7 +243,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "So now that we have structured or data in a way that allows for easy access, how do we handle instructions?",
                         "In ECS instructions are usually done by Systems. A system in this case would take a set of entities and iterate through them to give each a set of instructions.",
                         "To ensure all systems have a set of entities to iterate through I made a parent class that holds a set of entities. A System will then derive from this class and implement public functions that will be used during runtime.",
-                        "My SystemManager keeps a a shared pointer to all registered systems in an unordered map, where the key is the systems type. By storing the component list of each system in a similar fashion I am able to compare an entity's component list to a systems. If the entity has all the components the systems asks for, the entity will be registered in it's set, if not the entity will be removed from the set."
+                        "My SystemManager keeps a a shared pointer to all registered systems in an unordered map, where the key is the systems type. By storing the component list of each system in a similar fashion I am able to compare an entity's component list to a systems. If the entity has all the components the systems asks for, the entity will be registered in it's set, if not the entity will not be included in the set."
                     ],
                     hiddenIMG: {
                         name: "projects/ecs/systems",
@@ -295,7 +290,7 @@ export const DataContext: React.Context<IData> = React.createContext({
             id: '677d7fd1-5928-453a-a3cc-79d015ec294c',
             path: '/project/the-unmoored',
             name: 'The Unmoored',
-            description: "Made during stay at home orders",
+            description: "Made during stay at home orders-",
             thumbnailFile: {
                 name: 'projects/the-unmoored/5',
                 type: 'png',
@@ -381,7 +376,7 @@ export const DataContext: React.Context<IData> = React.createContext({
                 },
                 {
                     title: "Credits to Team 8",
-                    hiddenIMG: {
+                    thumbnailFile: {
                         name: "projects/the-unmoored/team",
                         type: "png",
                         alt: "TeamMembers"
@@ -449,59 +444,107 @@ export const DataContext: React.Context<IData> = React.createContext({
         //        }
         //    ]
         //},
-        //{
-        //    id: '842d1d8d-5fef-49d5-a8a9-794b61f7d35e',
-        //    path: '/project/in-between/',
-        //    name: 'In Between',
-        //    description: "Made during stay at home orders",
-        //    fullWidth: false,
-        //    thumbnailFile: {
-        //        name: 'projects/in-between/altar',
-        //        alt: 'In Between',
-        //        type: 'png'
-        //    },
-        //    iframe: {
-        //        src: 'https://www.youtube.com/embed/j4_2VheEmvU?list=PL8E3158rsFGsHedwHJEcSfT0B7z1fdXGN'
-        //    },
-        //    asides: [
-        //        {
-        //            title: 'Project Information',
-        //            paragraphs: [
-        //                "Tools used: Unreal Engine, Visual Studio, C++, Github, Unreal Blueprints, Miro",
-        //                "Role: Programmer",
-        //                "Team Size: 10",
-        //                "Project Time: 4 weeks",
-        //                "Summary: In Between is a first-person puzzle-game that plays out in between the planes of Paradise and Despair, also know as Limbo. Limbo is a place of uncertainty. Only souls who couldn't be judged ends up here. Where they are given a second chance to reach Paradise. To be deemed worthy to open the door to Paradise and enter, you must complete a set of puzzles. Just make sure you do it quick, the plane of Despair is not known for their patience when collecting lost souls.",
+        {
+            id: '842d1d8d-5fef-49d5-a8a9-794b61f7d35e',
+            path: '/project/in-between/',
+            name: 'In Between',
+            description: "Made during stay at home orders",
+            fullWidth: false,
+            thumbnailFile: {
+                name: 'projects/in-between/altar',
+                alt: 'In Between',
+                type: 'png'
+            },
+            iframe: {
+                src: 'https://www.youtube.com/embed/j4_2VheEmvU?list=PL8E3158rsFGsHedwHJEcSfT0B7z1fdXGN'
+            },
+            asides: [
+                {
+                    title: 'Project Information',
+                    paragraphs: [
+                        "Tools used: Unreal Engine, Visual Studio, C++, Github, Unreal Blueprints, Miro",
+                        "Role: Programmer",
+                        "Team Size: 10",
+                        "Project Time: 4 weeks",
+                        "Summary: In Between is a first-person puzzle-game that plays out in between the planes of Paradise and Despair, also know as Limbo. Limbo is a place of uncertainty. Only souls who couldn't be judged ends up here. Where they are given a second chance to reach Paradise. To be deemed worthy to open the door to Paradise and enter, you must complete a set of puzzles. Just make sure you do it quick, the plane of Despair is not known for their patience when collecting lost souls.",
 
-        //            ],
-        //            chatBubble: false
-        //        }
-        //    ],
-        //    blogs: [
-        //        {
-        //            title: "About the Project",
-        //            paragraphs: [
-        //                "In Between was planned and created during a 4 week period while most, if not all, team members worked remote. We were tasked to take inspiration for both the gameplay and the art syle from Bosch's painting: The Garden of Earthly Delights. We leaned towards a biblical interpretation, where the left side would depict Garden of Eden and symbolize heaven. While the right side would be hell.",
-        //                "After a bit of brainstorming our idea of playing the game in a Limbo state, between heaven and hell was borned. The idea was that the puzzles would work as tests for the player. If successful, they are rewarded with enternal bliss. If not, they get dragged to hell.",
-        //                "We had some further requirements for the game aswell. It had to be a singleplayer puzzle game and the median game session could not exceed a length of 10 minutes. We decided that limiting how long you could play would help us in designing the puzzles complexity and implemented a timer that would end the game after 10 minutes. "
-        //            ]
-        //        },
-        //        {
-        //            title: "My contribution",
-        //            paragraphs: [
-        //                ""
-        //            ]
-        //        }
-        //    ]
-        //},
+                    ],
+                    chatBubble: false
+                }
+            ],
+            blogs: [
+                {
+                    title: "About the Project",
+                    paragraphs: [
+                        "In Between was planned and created during a 4 week period while most, if not all, team members worked remote. We were tasked to take inspiration for both the gameplay and the art syle from Bosch's painting: The Garden of Earthly Delights. We leaned towards a biblical interpretation, where the left side would depict Garden of Eden and symbolize heaven. While the right side would be hell.",
+                        "After a bit of brainstorming our idea of playing the game in a Limbo state, between heaven and hell was borned. The idea was that the puzzles would work as tests for the player. If successful, they are rewarded with enternal bliss. If not, they get dragged to hell.",
+                    ],
+                    hiddenIMG: {
+                        name: "projects/in-between/theme",
+                        type: "png",
+                        alt: "GardenOfDelights"
+                    }
+                },
+            ]
+        },
+        {
+            id: '842d1d8d-5fef-49d5-a8a9-794b61f7d55e',
+            path: '/project/skull-patrol/',
+            name: 'Skull Patrol',
+            description: "My first game created as team",
+            fullWidth: false,
+
+            thumbnailFile: {
+                name: 'projects/skull-patrol/Menuu',
+                alt: 'Skull Patrol',
+                type: 'png'
+            },
+            iframe: {
+                src: 'https://www.youtube.com/embed/59Xo-saWrFs'
+            },
+            asides: [
+                {
+                    title: 'Project Information',
+                    paragraphs: [
+                        "Tools used: Unity, Visual Studio, C#, Perforce",
+                        "Role: Programmer",
+                        "Team Size: 6",
+                        "Project Time: 2 weeks",
+                        "Summary: Skull Patrol is a co-op action arcade game, where the goal is for you and a friend to fight off skeletons and their leader, the Summoner, and top the high score list. ",
+
+                    ],
+                    chatBubble: false
+                }
+            ],
+            blogs: [
+                {
+                    title: "About the Project",
+                    paragraphs: [
+                        "Skull Patrol is a co-op action arcade game, where the goal is for you and a friend to fight off skeletons and their leader, the Summoner, and top the high score list.",
+                        "The game does not have a definitive end. The only purpose is to get the highest possible score. The enemies become faster and tougher the further you progress, which is what creates the real challenge.  In order to reach your dream score, it is important to communicate with your friend to strategically plan your moves. The game has a score multiplier that will continually double your points until any of the players take damage.",
+                        "The skeletons are the core enemies of the game. The first player, controlling Officer Calcium, firstly must shoot the skeletons to trap them in bubbles. Then, the second player, controlling the tank, must shoot the bubbles to bits with their cannon.",
+                        "When you and your friend finally gain 1000 points, the boss called The Summoner appears. This enemy requires better communication to beat since it has new elements, separating it from the skeleton enemies. He will continue appearing when you reach higher scores as well, with even tougher attacks.",
+                    ]
+                },
+            ]
+
+        },
     ],
     socials: [
+        //{
+        //    ikon: {
+        //        name: 'github-brand',
+        //        type: 'svg',
+        //        alt: 'github',
+        //    },
+        //},
         {
             ikon: {
-                name: 'github-brand',
+                name: 'linkedin',
                 type: 'svg',
-                alt: 'github',
+                alt: 'linkedin',
             },
+            href: "https://www.linkedin.com/in/dennis-abramsson-73aa68177/",
         }
     ],
     contactBlogs: [

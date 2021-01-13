@@ -156,29 +156,7 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
                 }
 
                 <article className={`mt-4 ${blog.chatBubble ? 'card box-shadow-2' : ''} ${(firstBlog || normalBlog) ? 'mt-lg-0' : ''}`}>
-                    {
-                        blog.thumbnailFile && /*<img src={`${process.env.PUBLIC_URL} /${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />*/
-                        <div id="accordion">
-                            <div className="card box-shadow-2 ">
-                                <div className="card-header" id="headingOne">
-                                    <h3 className="mb-0">
-                                        <button className="btn font-weight-bold text-black" data-toggle="collapse" data-target={`#${blog.thumbnailFile.alt}`} aria-controls="collapseOne">
-                                            {`${blog.thumbnailFile.alt}`}
-                                            <small className="text-muted">&#9;Show more</small>
-                                            </button>
-                                        </h3>
-                                </div>
 
-                                <div id={`${blog.thumbnailFile.alt}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div className="card-body">
-                                            <img src={`${process.env.PUBLIC_URL} /${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
-                                        </div>
-                                </div>
-                            </div>
-                            </div>
-
-
-                    }
                     <div className={`${(normalBlog || chatBubble) ? 'card-body ' : ''} ${((normalBlog && firstBlog) ? 'mt-2' : '')}`}>
                         {
                             blog.title && normalBlog && <h3 className="card-title">{blog.title}</h3>
@@ -186,6 +164,10 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
 
                         {
                             blog.title && !normalBlog && <h5 className="card-title">{blog.title}</h5>
+                        }
+                        {
+                            blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL} /${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
+
                         }
 
                         {
