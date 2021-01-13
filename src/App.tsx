@@ -31,6 +31,14 @@ export const DataContext: React.Context<IData> = React.createContext({
                     "At the time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines than programming. You can see most of them under the projects tab.",
                 ],
                 showBody: true,
+            links:
+            [
+                {
+                    href: "https://drive.google.com/file/d/1Cq_z4cgn-3ZzVNPptJv6Rcwx_cxBZ47f/view?usp=sharing",
+                    btnText: "CV",
+                }
+
+            ],
             }
         ]
     },
