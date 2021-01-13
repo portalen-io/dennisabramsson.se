@@ -18,14 +18,14 @@ export const Welcome = (): JSX.Element => {
                     <div className="col-xl-6">
                         {
                             data.welcome.frontImage &&
-                            <img src={`${process.env.PUBLIC_URL}/${data.welcome.frontImage.name}.${data.welcome.frontImage.type}`} alt={data.welcome.frontImage.alt} className="d-block mx-auto mx-xl-0 ml-xl-auto w-100" style={{paddingTop: '35px'}}/*style={{ maxHeight: '400px' }}*/ />
+                            <img src={`${process.env.PUBLIC_URL}/${data.welcome.frontImage.name}.${data.welcome.frontImage.type}`} alt={data.welcome.frontImage.alt} className="d-block mx-auto mx-xl-0 ml-xl-auto w-100" style={{ paddingTop: '35px' }}/*style={{ maxHeight: '400px' }}*/ />
                         }
                     </div>
 
                     <div className="col-xl-6 p-4 font-size-10px" >
                         {
                             data.welcome.title &&
-                            <h1 id="front-title" className="display-1 mb-4 text-center" style={{ fontSize: '90px', paddingBottom: '20px'}}>{data.welcome.title}</h1>
+                            <h1 id="front-title" className="display-1 mb-4 text-center" style={{ paddingBottom: '20px' }}>{data.welcome.title}</h1>
                         }
 
                         {
@@ -49,7 +49,7 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
         const notFirstLink: boolean = links.indexOf(link) !== 0;
 
         return (
-            <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank" rel="noopener noreferrer">
+            <a key={links.indexOf(link)} href={link.href} className={`btn btn-primary ${notFirstLink ? 'ml-2' : ''}`} target="_blank" rel="noopener noreferrer" style={{ width: '200px' }}>
                 {link.btnText}
             </a>
         );
@@ -58,7 +58,7 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
     return (
         <article key={blogs.indexOf(blog)} >
             {
-                blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" style={{height: '48px', width: '48px'}} alt={blog.thumbnailFile.alt} />
+                blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" style={{ height: '48px', width: '48px' }} alt={blog.thumbnailFile.alt} />
             }
             <div className="">
                 {
@@ -77,7 +77,7 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
                         }
                     </div>
                 }
-                </div>
+            </div>
 
         </article>
     );
