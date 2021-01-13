@@ -24,11 +24,10 @@ export const DataContext: React.Context<IData> = React.createContext({
             {
                 title: 'Welcome to my portfolio!',
                 paragraphs: [
-                    "My name is Dennis Abramsson and I'm currently a student at Futuregames.",
-                    "I'm a video game enthusiast and have been playing games for as long as I can remember.",
-                    "I started out learning how Unity works and familiarized myself with C# syntax and the libraries in Unity in the beginning of 2019. After a few months I was able to produce the worksample that got me accepted into Futuregames and I haven't looked back since.",
-                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely and I've also learned a lot working with both Unreal Engine and C++.",
-                    "At the time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines than programming. You can see most of them under the projects tab.",
+                    "My name is Dennis Abramsson and I'm currently a student at Futuregames, a higher vocational school. I'm a video game enthusiast and have been playing games for as long as I can remember so when the opportunity to learn how to create games arose, I jumped on it.",
+                    "I started out learning how Unity works and familiarized myself with C# syntax in the beginning of 2019. After a few months I was able to produce the worksample that got me accepted into Futuregames and I haven't looked back since. It's just something about how coding a program feels. How ones emotions changes when a program crashes, into the joy when you get it to work. The best part though by far is that it feels like I'll always be able to learn something new.",
+                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely. I've also learned a lot working with both Unreal Engine and C++.",
+                    "At the I'm time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines. You can see most of them under the projects tab.",
                 ],
                 showBody: true,
             links:
@@ -390,111 +389,111 @@ export const DataContext: React.Context<IData> = React.createContext({
                 }
             ]
         },
-        {
-            id: '677d7fd1-5928-453a-a3cc-79d015ec295c',
-            path: '/project/snake',
-            name: 'Snake with A* driven movement',
-            description: "This project is a replication of the famous Snake game with a AI driven snake that uses A* pathfinding to make it's way to the food.",
-            thumbnailFile: {
-                name: 'projects/snake/thumbnail',
-                type: 'png',
-                alt: 'A* Snake'
-            },
-            iframe: {
-                src: 'https://www.youtube.com/embed/zKOY2J29YKo'
-            },
-            fullWidth: false,
-            asides: [
-                {
-                    title: 'Project Information',
-                    paragraphs: [
-                        "Tools used: Unity Engine, Visual Studio, C#, Github",
-                        "Team Size: 1",
-                        "Project Time: 4 weeks",
-                        "Summary: This project was made as a school project were the main goal was to recreate the Snake game using a single linked list. The bonus goal was adding an AI which goal was to find the food and go to it through the use of A* pathfiniding.",
+        //{
+        //    id: '677d7fd1-5928-453a-a3cc-79d015ec295c',
+        //    path: '/project/snake',
+        //    name: 'Snake with A* driven movement',
+        //    description: "This project is a replication of the famous Snake game with a AI driven snake that uses A* pathfinding to make it's way to the food.",
+        //    thumbnailFile: {
+        //        name: 'projects/snake/thumbnail',
+        //        type: 'png',
+        //        alt: 'A* Snake'
+        //    },
+        //    iframe: {
+        //        src: 'https://www.youtube.com/embed/zKOY2J29YKo'
+        //    },
+        //    fullWidth: false,
+        //    asides: [
+        //        {
+        //            title: 'Project Information',
+        //            paragraphs: [
+        //                "Tools used: Unity Engine, Visual Studio, C#, Github",
+        //                "Team Size: 1",
+        //                "Project Time: 4 weeks",
+        //                "Summary: This project was made as a school project were the main goal was to recreate the Snake game using a single linked list. The bonus goal was adding an AI which goal was to find the food and go to it through the use of A* pathfiniding.",
 
-                    ],
-                    chatBubble: false
-                },
-            ],
-            blogs: [
-                {
-                    title: 'Video',
-                    paragraphs: [
-                        "The video linked is a showcase of the pathing for the snake.",
-                        "Red tiles are the snakes body and is deemed unpassable. It will do everything in it's power to avoid stepping on those tiles.",
-                        "Green tiles are the drawn path that the snake is on. The last piece being it's target tile.",
-                    ],
-                },
-                {
-                    title: "Tile/SinglyLinkedList",
-                    paragraphs: [
-                        "The first two code snippets you can see on the left side is my implementation of a single linked list.",
-                        "The Tile class is just a simple struct that keeps all the information we need to build the list.",
-                        "My SinglyLinkedList class is the actual implemention of the list. It is later used in game to handle the Snakes movement. To handle the movement I simply move the first object in the list one step in the right direction. I then get the last object in the list, which is why I saved it as a variable, and place it right behind the head.",
-                        "That way I am able to produce a result where the snake is moving fluidly without having to move every single body part."
-                    ],
-                    hiddenIMG: {
-                        name: "projects/snake/"
-                    }
-                },
-                {
-                    title: "Node/FindPath",
-                    paragraphs: [
-                        "The last two snippets are from my implementation of the A* algorithm.",
-                        "The node class is structured similar to the Tile class. It contains the data necessary to calculate the path.",
-                        "FindPath, as the name suggest, is the actual fuction that calculates the path from the start position to the target position. If the target node is found and there is a clear path to it we retrace our steps and add every node to a list. I then reverse the list which results in having a data container I can iterate through to know the next movement for the snake.",
-                        "If no clear path can be found I created logic for the snake to try to survive a bit longer in hope that a path would open up as the snake continues to move. To do this I simply made the snakes tail walkable and put it as the target node for finding a path. Which results in the snake following itself untill a path can be found.",
-                        "If neither the the original target node or the tail can be found the snake will check the closest nodes to see which is walkable and go to it. This gives the snakes a few extra movements in hope of finding a path. If it doesn't find a path it will hit eventually hit a wall or collide with itself trigger the loosing condition."
-                    ]
-                }
-            ]
-        },
-        {
-            id: '842d1d8d-5fef-49d5-a8a9-794b61f7d35e',
-            path: '/project/in-between/',
-            name: 'In Between',
-            description: "Made during stay at home orders",
-            fullWidth: false,
-            thumbnailFile: {
-                name: 'projects/in-between/altar',
-                alt: 'In Between',
-                type: 'png'
-            },
-            iframe: {
-                src: 'https://www.youtube.com/embed/j4_2VheEmvU?list=PL8E3158rsFGsHedwHJEcSfT0B7z1fdXGN'
-            },
-            asides: [
-                {
-                    title: 'Project Information',
-                    paragraphs: [
-                        "Tools used: Unreal Engine, Visual Studio, C++, Github, Unreal Blueprints, Miro",
-                        "Role: Programmer",
-                        "Team Size: 10",
-                        "Project Time: 4 weeks",
-                        "Summary: In Between is a first-person puzzle-game that plays out in between the planes of Paradise and Despair, also know as Limbo. Limbo is a place of uncertainty. Only souls who couldn't be judged ends up here. Where they are given a second chance to reach Paradise. To be deemed worthy to open the door to Paradise and enter, you must complete a set of puzzles. Just make sure you do it quick, the plane of Despair is not known for their patience when collecting lost souls.",
+        //            ],
+        //            chatBubble: false
+        //        },
+        //    ],
+        //    blogs: [
+        //        {
+        //            title: 'Video',
+        //            paragraphs: [
+        //                "The video linked is a showcase of the pathing for the snake.",
+        //                "Red tiles are the snakes body and is deemed unpassable. It will do everything in it's power to avoid stepping on those tiles.",
+        //                "Green tiles are the drawn path that the snake is on. The last piece being it's target tile.",
+        //            ],
+        //        },
+        //        {
+        //            title: "Tile/SinglyLinkedList",
+        //            paragraphs: [
+        //                "The first two code snippets you can see on the left side is my implementation of a single linked list.",
+        //                "The Tile class is just a simple struct that keeps all the information we need to build the list.",
+        //                "My SinglyLinkedList class is the actual implemention of the list. It is later used in game to handle the Snakes movement. To handle the movement I simply move the first object in the list one step in the right direction. I then get the last object in the list, which is why I saved it as a variable, and place it right behind the head.",
+        //                "That way I am able to produce a result where the snake is moving fluidly without having to move every single body part."
+        //            ],
+        //            hiddenIMG: {
+        //                name: "projects/snake/"
+        //            }
+        //        },
+        //        {
+        //            title: "Node/FindPath",
+        //            paragraphs: [
+        //                "The last two snippets are from my implementation of the A* algorithm.",
+        //                "The node class is structured similar to the Tile class. It contains the data necessary to calculate the path.",
+        //                "FindPath, as the name suggest, is the actual fuction that calculates the path from the start position to the target position. If the target node is found and there is a clear path to it we retrace our steps and add every node to a list. I then reverse the list which results in having a data container I can iterate through to know the next movement for the snake.",
+        //                "If no clear path can be found I created logic for the snake to try to survive a bit longer in hope that a path would open up as the snake continues to move. To do this I simply made the snakes tail walkable and put it as the target node for finding a path. Which results in the snake following itself untill a path can be found.",
+        //                "If neither the the original target node or the tail can be found the snake will check the closest nodes to see which is walkable and go to it. This gives the snakes a few extra movements in hope of finding a path. If it doesn't find a path it will hit eventually hit a wall or collide with itself trigger the loosing condition."
+        //            ]
+        //        }
+        //    ]
+        //},
+        //{
+        //    id: '842d1d8d-5fef-49d5-a8a9-794b61f7d35e',
+        //    path: '/project/in-between/',
+        //    name: 'In Between',
+        //    description: "Made during stay at home orders",
+        //    fullWidth: false,
+        //    thumbnailFile: {
+        //        name: 'projects/in-between/altar',
+        //        alt: 'In Between',
+        //        type: 'png'
+        //    },
+        //    iframe: {
+        //        src: 'https://www.youtube.com/embed/j4_2VheEmvU?list=PL8E3158rsFGsHedwHJEcSfT0B7z1fdXGN'
+        //    },
+        //    asides: [
+        //        {
+        //            title: 'Project Information',
+        //            paragraphs: [
+        //                "Tools used: Unreal Engine, Visual Studio, C++, Github, Unreal Blueprints, Miro",
+        //                "Role: Programmer",
+        //                "Team Size: 10",
+        //                "Project Time: 4 weeks",
+        //                "Summary: In Between is a first-person puzzle-game that plays out in between the planes of Paradise and Despair, also know as Limbo. Limbo is a place of uncertainty. Only souls who couldn't be judged ends up here. Where they are given a second chance to reach Paradise. To be deemed worthy to open the door to Paradise and enter, you must complete a set of puzzles. Just make sure you do it quick, the plane of Despair is not known for their patience when collecting lost souls.",
 
-                    ],
-                    chatBubble: false
-                }
-            ],
-            blogs: [
-                {
-                    title: "About the Project",
-                    paragraphs: [
-                        "In Between was planned and created during a 4 week period while most, if not all, team members worked remote. We were tasked to take inspiration for both the gameplay and the art syle from Bosch's painting: The Garden of Earthly Delights. We leaned towards a biblical interpretation, where the left side would depict Garden of Eden and symbolize heaven. While the right side would be hell.",
-                        "After a bit of brainstorming our idea of playing the game in a Limbo state, between heaven and hell was borned. The idea was that the puzzles would work as tests for the player. If successful, they are rewarded with enternal bliss. If not, they get dragged to hell.",
-                        "We had some further requirements for the game aswell. It had to be a singleplayer puzzle game and the median game session could not exceed a length of 10 minutes. We decided that limiting how long you could play would help us in designing the puzzles complexity and implemented a timer that would end the game after 10 minutes. "
-                    ]
-                },
-                {
-                    title: "My contribution",
-                    paragraphs: [
-                        ""
-                    ]
-                }
-            ]
-        },
+        //            ],
+        //            chatBubble: false
+        //        }
+        //    ],
+        //    blogs: [
+        //        {
+        //            title: "About the Project",
+        //            paragraphs: [
+        //                "In Between was planned and created during a 4 week period while most, if not all, team members worked remote. We were tasked to take inspiration for both the gameplay and the art syle from Bosch's painting: The Garden of Earthly Delights. We leaned towards a biblical interpretation, where the left side would depict Garden of Eden and symbolize heaven. While the right side would be hell.",
+        //                "After a bit of brainstorming our idea of playing the game in a Limbo state, between heaven and hell was borned. The idea was that the puzzles would work as tests for the player. If successful, they are rewarded with enternal bliss. If not, they get dragged to hell.",
+        //                "We had some further requirements for the game aswell. It had to be a singleplayer puzzle game and the median game session could not exceed a length of 10 minutes. We decided that limiting how long you could play would help us in designing the puzzles complexity and implemented a timer that would end the game after 10 minutes. "
+        //            ]
+        //        },
+        //        {
+        //            title: "My contribution",
+        //            paragraphs: [
+        //                ""
+        //            ]
+        //        }
+        //    ]
+        //},
     ],
     socials: [
         {
