@@ -22,10 +22,10 @@ export const Welcome = (): JSX.Element => {
                         }
                     </div>
 
-                    <div className="col-xl-6 p-4" >
+                    <div className="col-xl-6 p-4 font-size-10px" >
                         {
                             data.welcome.title &&
-                            <h1 id="front-title" className="display-1 mb-4">{data.welcome.title}</h1>
+                            <h1 id="front-title" className="display-1 mb-4 text-center" style={{ fontSize: '90px', paddingBottom: '20px'}}>{data.welcome.title}</h1>
                         }
 
                         {
@@ -56,25 +56,29 @@ export const mapBlogs = (blogs: IDataProjectsBlog[]): JSX.Element[] => blogs.map
     });
 
     return (
-        <article key={blogs.indexOf(blog)} className="blog mb-4 card box-shadow-2">
+        <article key={blogs.indexOf(blog)} >
             {
-                blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
+                blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" style={{height: '48px', width: '48px'}} alt={blog.thumbnailFile.alt} />
             }
-
-            <div className="card-body">
+            <div className="">
                 {
-                    blog.title &&
-                    <h4 className="card-title">{blog.title}</h4>
-                }
+                    blog.showBody && <div className="text-center" >
+                        {
+                            blog.title &&
+                            <h4 className="card-title">{blog.title}</h4>
+                        }
 
-                {
-                    blog.paragraphs && mapParagraphs(blog.paragraphs)
-                }
+                        {
+                            blog.paragraphs && mapParagraphs(blog.paragraphs)
+                        }
 
-                {
-                    blog.links && mapLinks(blog.links)
+                        {
+                            blog.links && mapLinks(blog.links)
+                        }
+                    </div>
                 }
-            </div>
+                </div>
+
         </article>
     );
 });

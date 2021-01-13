@@ -13,6 +13,7 @@
     "dotenv": "^8.2.0",
     "history": "^5.0.0",
     "react": "^16.13.1",
+    "react-color": "^2.19.3",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
@@ -49,7 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@popperjs/core": "^2.4.4",
+    "@popperjs/core": "2.5.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -61,7 +62,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/uuid": "^8.3.0",
     "autoprefixer": "^9.8.6",
-    "bootstrap": "^5.0.0-alpha1",
+    "bootstrap": "5.0.0-alpha1",
     "cross-env": "^7.0.2",
     "gh-pages": "^3.1.0",
     "node-sass-chokidar": "^1.5.0",

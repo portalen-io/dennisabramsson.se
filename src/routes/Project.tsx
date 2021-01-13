@@ -86,6 +86,7 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
                     {
                         weHaveDisplays &&
                         <Fragment>
+
                             <div className={`${project.fullWidth ? 'col-12' : 'col-lg-8'}`}>
                                 {
                                     project.iframe && <IFrame />
@@ -108,8 +109,10 @@ const ProjectContent = (project: IDataProject): JSX.Element => {
                     {
                         project.blogs &&
                         <div className={`p-3 ${project.fullWidth ? 'col-lg-6 py-4' : 'col-12'} ${(!project.asides && project.fullWidth) ? 'col-lg-12' : ''}`}>
-                            <div className={`card box-shadow-2 ${project.fullWidth ? '' : 'mt-4'}`}>
+                            <div className={`card box-shadow-2 bg-light ${project.fullWidth ? '' : 'mt-4'}`}>
                                 {project.blogs && mapBlogs(project.blogs)}
+
+
                             </div>
                         </div>
                     }
@@ -128,7 +131,10 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
 
         const mapParagraphs = (paragraphs: string[]) => paragraphs.map((paragraph: string) => {
             return (
-                <p key={paragraphs.indexOf(paragraph)} className="card-text">{paragraph}</p>
+                <p key={paragraphs.indexOf(paragraph)} className="card-text">{paragraph}</p> 
+
+
+
             );
         });
 
@@ -151,10 +157,29 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
 
                 <article className={`mt-4 ${blog.chatBubble ? 'card box-shadow-2' : ''} ${(firstBlog || normalBlog) ? 'mt-lg-0' : ''}`}>
                     {
-                        blog.thumbnailFile && <img src={`${process.env.PUBLIC_URL}/${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
-                    }
+                        blog.thumbnailFile && /*<img src={`${process.env.PUBLIC_URL} /${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />*/
+                        <div id="accordion">
+                            <div className="card box-shadow-2 ">
+                                <div className="card-header" id="headingOne">
+                                    <h3 className="mb-0">
+                                        <button className="btn font-weight-bold text-black" data-toggle="collapse" data-target={`#${blog.thumbnailFile.alt}`} aria-controls="collapseOne">
+                                            {`${blog.thumbnailFile.alt}`}
+                                            <small className="text-muted">&#9;Show more</small>
+                                            </button>
+                                        </h3>
+                                </div>
 
-                    <div className={`${(normalBlog || chatBubble) ? 'card-body' : ''} ${((normalBlog && firstBlog) ? 'mt-2' : '')}`}>
+                                <div id={`${blog.thumbnailFile.alt}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div className="card-body">
+                                            <img src={`${process.env.PUBLIC_URL} /${blog.thumbnailFile.name}.${blog.thumbnailFile?.type}`} className="card-img-top" alt={blog.thumbnailFile.alt} />
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+
+
+                    }
+                    <div className={`${(normalBlog || chatBubble) ? 'card-body ' : ''} ${((normalBlog && firstBlog) ? 'mt-2' : '')}`}>
                         {
                             blog.title && normalBlog && <h3 className="card-title">{blog.title}</h3>
                         }
@@ -185,7 +210,51 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
                                 }
                             </div>
                         }
-                    </div>
+                        {
+                            !aside && blog.hiddenParagraphs && blog.buttonName &&
+                            <div id="accordion">
+                                <div className="card box-shadow-2">
+                                    <div className="card-header" id="headingOne">
+                                        <h3 className="mb-0">
+                                            <button className="btn font-weight-bold text-black" data-toggle="collapse" data-target={`#${blog.buttonName}`} aria-controls="collapseTwo">
+                                                {`${blog.buttonName}`}
+                                    <small className="text-muted">&#9;Show more</small>
+                                            </button>
+                                        </h3>
+                                    </div>
+
+                                    <div id={`${blog.buttonName}`}className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div className="card-body">
+                                            {blog.hiddenParagraphs}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        {
+                            !aside && blog.hiddenIMG &&
+                            <div id="accordion">
+                                <div className="card box-shadow-2">
+                                    <div className="card-header bg-white" id="headingOne">
+                                        <h3 className="mb-0">
+                                            <button className="btn font-weight-bold text-primary" data-toggle="collapse" data-target={`#${blog.hiddenIMG.alt}`} aria-controls="collapseTwo">
+                                                {`${blog.hiddenIMG.alt}`}
+                                            </button>
+                                        </h3>
+                                    </div>
+
+                                    <div id={`${blog.hiddenIMG.alt}`} className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div className="card-body">
+                                            <img src={`${process.env.PUBLIC_URL}/${blog.hiddenIMG.name}.${blog.hiddenIMG?.type}`} className="card-img-top" alt={blog.hiddenIMG.alt} />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        </div>
+
                 </article>
 
                 {

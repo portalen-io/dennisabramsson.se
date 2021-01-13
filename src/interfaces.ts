@@ -1,3 +1,5 @@
+
+
 export interface IData {
     welcome: IDataWelcome;
     projects?: IDataProject[];
@@ -9,6 +11,7 @@ export interface IImageFile {
     name: string;
     type: string;
     alt: string;
+    displayName?: string;
 }
 
 
@@ -20,7 +23,12 @@ export interface IDataWelcome {
     blogs?: IDataProjectsBlog[];
 }
 
-
+export interface IDataDropDown {
+    // drop down variables in here
+    // then import in project
+    // and implemnt at the latest accordion
+    // possible on the first accordion too
+}
 
 // PROJECTS
 export interface IDataProject {
@@ -50,13 +58,17 @@ export interface IDataProjectsBlog {
     chatBubble?: boolean;
     createdAt?: string;
     updatedAt?: string;
+    showBody?: boolean;
+    hiddenParagraphs?: string[];
+    hiddenIMG?: IImageFile;
+    buttonName?: string;
 }
 
 
 // SOCIALS
 export interface IDataSocial {
     ikon: IImageFile;
-    href: string;
+    href?: string;
 }
 
 
