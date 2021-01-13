@@ -24,11 +24,10 @@ export const DataContext: React.Context<IData> = React.createContext({
             {
                 title: 'Welcome to my portfolio!',
                 paragraphs: [
-                    "My name is Dennis Abramsson and I'm currently a student at Futuregames.",
-                    "I'm a video game enthusiast and have been playing games for as long as I can remember.",
-                    "I started out learning how Unity works and familiarized myself with C# syntax and the libraries in Unity in the beginning of 2019. After a few months I was able to produce the worksample that got me accepted into Futuregames and I haven't looked back since.",
-                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely and I've also learned a lot working with both Unreal Engine and C++.",
-                    "At the time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines than programming. You can see most of them under the projects tab.",
+                    "My name is Dennis Abramsson and I'm currently a student at Futuregames, a higher vocational school. I'm a video game enthusiast and have been playing games for as long as I can remember so when the opportunity to learn how to create games arose, I jumped on it.",
+                    "I started out learning how Unity works and familiarized myself with C# syntax in the beginning of 2019. After a few months I was able to produce the worksample that got me accepted into Futuregames and I haven't looked back since. It's just something about how coding a program feels. How ones emotions changes when a program crashes, into the joy when you get it to work. The best part though by far is that it feels like I'll always be able to learn something new.",
+                    "During my time at Futuregames my knowledge about Unity and C# has grown immensely. I've also learned a lot working with both Unreal Engine and C++.",
+                    "At the I'm time writing this I've been able to create 4 games in collaboration with fellow students from other disciplines. You can see most of them under the projects tab.",
                 ],
                 showBody: true,
             links:
