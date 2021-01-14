@@ -23,7 +23,6 @@ declare global {
         BS_LG: number;
         BS_XL: number;
         BS_XXL: number;
-        hasForcedReload: boolean;
     }
 };
 
@@ -37,7 +36,6 @@ declare global {
     window.BS_LG = 992;
     window.BS_XL = 1200;
     window.BS_XXL = 1400;
-    window.hasForcedReload = false;
 })();
 
 ReactDOM.render(
