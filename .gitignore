@@ -2,6 +2,8 @@
 
 .vs/
 
+.eslintcache
+
 
 # dependencies
 /node_modules
