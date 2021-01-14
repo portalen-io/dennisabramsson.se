@@ -8,9 +8,6 @@ export default function Home(): JSX.Element {
         if (!localStorage.getItem('hasForcedReload')) {
             localStorage.setItem('hasForcedReload', 'true');
             window.location.reload(true);
-        }
-
-        return () => {
             localStorage.removeItem('hasForcedReload');
         }
     }, []);
