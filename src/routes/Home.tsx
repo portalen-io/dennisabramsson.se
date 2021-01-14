@@ -5,9 +5,9 @@ import { FeaturedProjects } from '../components/FeaturedProjects';
 
 export default function Home(): JSX.Element {
     useEffect(() => {
-        if (localStorage.getItem('hasForcedReload') === ('' || null)) {
+        if (!localStorage.getItem('hasForcedReload')) {
             localStorage.setItem('hasForcedReload', 'true');
-            window.localStorage.reload(true);
+            window.location.reload(true);
         }
     }, []);
 
