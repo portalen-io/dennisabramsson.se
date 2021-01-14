@@ -9,6 +9,10 @@ export default function Home(): JSX.Element {
             localStorage.setItem('hasForcedReload', 'true');
             window.location.reload(true);
         }
+
+        return () => {
+            localStorage.removeItem('hasForcedReload');
+        }
     }, []);
 
     return (
