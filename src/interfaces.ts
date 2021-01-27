@@ -60,6 +60,7 @@ export interface IDataProjectsBlog {
     updatedAt?: string;
     showBody?: boolean;
     hiddenParagraphs?: string[];
+    codeEmbed?: string;
     hiddenIMG?: IImageFile;
     buttonName?: string;
 }

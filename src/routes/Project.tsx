@@ -193,12 +193,12 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
                             </div>
                         }
                         {
-                            !aside && blog.hiddenParagraphs && blog.buttonName &&
+                            !aside && blog.codeEmbed && blog.buttonName &&
                             <div id="accordion">
                                 <div className="card box-shadow-2">
                                     <div className="card-header" id="headingOne">
                                         <h3 className="mb-0">
-                                            <button className="btn font-weight-bold text-black" data-toggle="collapse" data-target={`#${blog.buttonName}`} aria-controls="collapseTwo">
+                                            <button className="btn font-weight-bold text-primary" data-toggle="collapse" data-target={`#${blog.buttonName}`} aria-controls="collapseTwo">
                                                 {`${blog.buttonName}`}
                                     <small className="text-muted">&#9;Show more</small>
                                             </button>
@@ -207,8 +207,8 @@ export const mapBlogs = (blogs: IDataProjectsBlog[], aside?: boolean): JSX.Eleme
 
                                     <div id={`${blog.buttonName}`}className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div className="card-body">
-                                            {blog.hiddenParagraphs}
-                                            
+
+                                            <iframe src = {`${blog.codeEmbed}`} className="w-100" height="315"/>
                                         </div>
                                     </div>
                                 </div>

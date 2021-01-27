@@ -105,11 +105,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "Since I now knew what I needed to take a photo I set up a base class that would function as a individual photo and hold all information needed. My plan was that a manager could then instantiate this class whenever the player took a photo. The original class had all 3 aforementioned parts needed for the photo in this class, but as I was rewriting the code I realized that I don't need a SceneCapture camera for every photo. I can just use one for all photos and switch out the TextureTarget to a new TextureRender. Thus I removed the SceneCapture from the PhotoClass and put it in the manager instead.",
                         "I also tried pushing togeter the photo class and manager class, but found that I had some troubles getting it to display correctly if I didn't create a Dynamic instance material for each photo. That dynamic instance also needed to be created from a unique Static mesh component otherwise it just overwrote previous photos, making each one look the same.",
                     ],
-                    hiddenIMG: {
-                        name: "projects/bahari/photo",
-                        type: "png",
-                        alt: "PhotoClass"
-                    }
+                    buttonName: "PhotoClass",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611748515-566078871.html",
                 },
                 {
                     title: "The Manager",
@@ -117,11 +114,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "The managers purpose was to take photos, keep track of all photos taken, mark which ones are of a colletable object and display them onto a UI. Originally this class had 15 functions to achieve it's purpose. After looking over it qucikly I realized that most of them was not needed and spent a day refactoring it. I was able to break it down to 5 functions and still keep all relevant functionality while moving out some that didn't make sense, like hiding unknown widget elements and counting score.",
                         "The PhotoManager is meant to be used by a widget to display photos and for them to work togheter we need to do some setup in the widget first. The widget itself must keep track of a page number and have an array of images that can be used to display the photos taken in game. When we have that ready we simply need to get a reference to the PhotoManager in game and call it's ShowPage function passing in the pageNumber and images. Passing in page 0 would show us the photos marked as collectables while pages 1 or greater will show our photos in the order they were taken. The PhotosPerPage variable inside the manager must be set to the same amount of images we use in the widget.",
                     ],
-                    hiddenIMG: {
-                        name: "projects/bahari/photoManager",
-                        type: "png",
-                        alt: "PhotoManagerClass"
-                    }
+                    buttonName: "PhotoManagerClass",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611756898-713094963.html",
                 },
                 {
                     title: "Credits to Team 4!",
@@ -182,11 +176,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "As mentioned before an entity is just a simple number. We will later use it to find components that we need to work on, but first I need to introduce components.",
 
                     ],
-                    hiddenIMG: {
-                        name: "projects/ecs/entity",
-                        type: "png",
-                        alt: "EntityExample"
-                    }
+                    buttonName: "EntityExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611757098-2038165946.html",
                 },
                 {
                     title: "Components",
@@ -194,23 +185,17 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "Components, as mentioned earlier are just structs of data. When I create a new component I assign it a ComponentID. That ID is used in conjuction with a bitset called ComponentList that has the same amount of bits as the max amount of components I can register. If a bit would be set it can serve as a indication that a player has a certain component.",
                         "So if we register the Position component, that would get ID 0. We can then check if any entities has set the first bit in their ComponentList to serve as an indication on what entities have a position component.",
                     ],
-                    hiddenIMG: {
-                        name: "projects/ecs/component",
-                        type: "png",
-                        alt: "ComponentExample"
-                    }
+                    buttonName: "ComponentExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611757323-1298821387.html",
                 },
                 {
                     title: "Entity Manager",
                     paragraphs: [
                         "Since an Entity only is a number we need a manager that extend their functionality. The manager is in charge of creating new entities. This is done by instantiating a queue and filling it will all availble entities. When we want to create a new entity we simply pop the first number in the queue and if we destroy one we simply put it's number at the back of the queue to be reused later in the programs lifetime.",
                         "The Entity Manager also keeps track on what components an entity has. This is done by keeping an array of ComponentLists, where each array index corresponds to an entity ID. So index 0 would be entity 0's component list."
-                        ],
-                    hiddenIMG: {
-                        name: "projects/ecs/entityManager",
-                        type: "png",
-                        alt: "EntityManagerExample"
-                    }
+                    ],
+                    buttonName: "EntityManagerExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611757537-1890977612.html",
                 },
                 {
                     title: "Component Array",
@@ -219,11 +204,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "The Component Array is a templated class so it can story any type of component. It derives from an empty parent class so that a manager can store all arrays in the same array even though they have different types by saving a pointer to the parent class.",
                         "The array is structured just like my other arrays. The index corresponds to an entity to show that it's that entity's component. One problem with this is that I will always have a full array. For example, if I have MAX_ENTITIES set to 500 and I register a new component, let us pretend it's the position component shown earlier. The array will then be filled with 500 position components to ensure every entity can equip a position component, even if I only use 1. A benefit with this is that I will always have a packed array that I don't need to restructure.",
                     ],
-                    hiddenIMG: {
-                        name: "projects/ecs/componentArray",
-                        type: "png",
-                        alt: "ComponentArrayExample"
-                    }
+                    buttonName: "ComponentArrayExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611757685-1251019295.html",
                 },
                 {
                     title: "Component Manager",
@@ -231,11 +213,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "The component manager is used to register components, add, remove and fetch them from entities. It also keeps track of all componentArrays by storing them in an array with a pointer to their empty parent class.",
                         "We're storing a shared pointer to the parent class so we can store all component arrays in the same place. The array index corresponds to a component ID. So our Position component would have index 0 as it was the first component we registered. We can then get array index 0 and do a pointer cast to a component array of type position to get our array of positions. This means that we always need to declare what component we are trying to read/write to. Since all this is done with templated functions, a call to get a specific component would be something along the lines of 'componentManager->GetComponent<Position>(entity) which I think is very readable.",
                     ],
-                    hiddenIMG: {
-                        name: "projects/ecs/componentManager",
-                        type: "png",
-                        alt: "ComponentManagerExample"
-                    }
+                    buttonName: "ComponentManagerExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611757848-1418595021.html",
                 },
                 {
                     title: "Systems and Their Manager",
@@ -245,11 +224,9 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "To ensure all systems have a set of entities to iterate through I made a parent class that holds a set of entities. A System will then derive from this class and implement public functions that will be used during runtime.",
                         "My SystemManager keeps a a shared pointer to all registered systems in an unordered map, where the key is the systems type. By storing the component list of each system in a similar fashion I am able to compare an entity's component list to a systems. If the entity has all the components the systems asks for, the entity will be registered in it's set, if not the entity will not be included in the set."
                     ],
-                    hiddenIMG: {
-                        name: "projects/ecs/systems",
-                        type: "png",
-                        alt: "SystemManagerExample"
-                    }
+                    buttonName: "SystemManagerExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611757988-986442964.html", 
+
                 },
                 {
                     title: "Coordinator",
@@ -258,24 +235,17 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "In an attempt to make the system more intuative to use I created a Coordinator class that functions as a wrapper for the ECS foundation. By implementing this class, the call to add a component went from the picture below to this : 'coordinator->AddComponent<Position>(entity, Position{})'. Now that is a lot easier to use."
 
                     ],
-                    hiddenIMG: {
-                        name: "projects/ecs/addComp",
-                        type: "png",
-                        alt: "AddComponentExample",
-                    }
+                    buttonName: "AddComponentExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611758192-870776325.html",
                 },
                 {
                     title: "How to use it?",
                     paragraphs: [
                         "So now that we have everything set up, how do we use it?",
                         ""
-                    ]
-                    ,
-                    hiddenIMG: {
-                        name: "projects/ecs/useExample",
-                        type: "png",
-                        alt: "UseExample",
-                    }
+                    ],
+                    buttonName: "UseExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611758753-1222208655.html",
                 },
                 {
                     title: "What's Next?",
@@ -322,12 +292,9 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "In hindsight I believe using an interface would have been better as I later found out that they didn't need to share any functionalities."
 
                     ],
-                    hiddenIMG:
-                    {
-                        name: "projects/the-unmoored/interactCall",
-                        type: "png",
-                        alt: "Interact"
-                    }
+                    buttonName: "InteractExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611759254-935606658.html",
+
                 },
                 {
                     title: "ItemObjects",
@@ -339,12 +306,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "To create a new item one simply needed to duplicate the existing Item prefab and assign it an ItemObject. The ItemObject itself can be created by right clicking in the asset folder, just as any new object. Since the ItemObjects saves as an asset, it can easily be reused on several game objects and allows for easy top level changes to descriptions and general apperence in game without having to leave the inspector.",
 
                     ],
-                    hiddenIMG:
-                    {
-                        name: "projects/the-unmoored/items",
-                        type: "png",
-                        alt: "ItemsCode"
-                    }
+                    buttonName: "ItemsCode",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611759591-1688556121.html",
                 },
                 {
                     title: "Inventory",
@@ -352,12 +315,8 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "The Inventory derives from ScriptableObject just like ItemObjects. I chose to do so to make it easier to create different inventories. Those inventories could be used to store things in a chest, or give another character than the player the ability to hold items. In the actual game we only have one use case for it, which is the player inventory. As such it didn't need much functionality. The class itself only holds a list of ItemObjects and two main functions, one to add items to the list and one to check if the inventory has a specific item. If we have assigned a UI, it also ensures it gets updated when an items gets added to the inventory.",
 
                     ],
-                    hiddenIMG:
-                    {
-                        name: "projects/the-unmoored/inventoryObject",
-                        type: "png",
-                        alt: "InventoryCode"
-                    }
+                    buttonName: "InventoryCode",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611760129-1655350718.html",
                 },
                 {
                     title: "Dialogue",
@@ -368,10 +327,12 @@ export const DataContext: React.Context<IData> = React.createContext({
                         "To convert the information onto a UI I created a manager which would pick up a dialogue to play through an event, it would then display the information as seen below.",
                         "If I had more time I would have like improved on this system by making a custom editor script. My idea is that I could paint up the branching of dialogues like a tree so it's easier to see which dialogues connect to which.",
                     ],
+                    buttonName: "DialogueExample",
+                    codeEmbed: "https://www.thebra.se/externals/tools/thebrahighlight/embeds/1611760401-69818691.html",
                     hiddenIMG: {
-                        name: "projects/the-unmoored/dialogue2",
+                        name: "projects/the-unmoored/editorView",
                         type: "png",
-                        alt: "DialogueExample"
+                        alt: "EditorandInGameView"
                     },
                 },
                 {
